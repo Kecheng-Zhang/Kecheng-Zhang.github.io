@@ -1,0 +1,67 @@
+/* PC screen */
+@media screen and (min-width: 1280px) {
+
+    /* Header and Footer contents*/
+
+    .header-content {
+        margin: auto;
+        min-width: 1280px;
+        max-width: 1600px;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .footer-content {
+        margin: auto;
+        min-width: 1280px;
+        max-width: 1600px;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Grid container and items */
+
+    .container {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: auto;
+        grid-template-areas: "l m r";
+        margin: auto;
+        min-width: 1280px;
+        max-width: 1600px;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .item-mid {
+        grid-area: m;
+    }
+
+    .item-left {
+        grid-area: l;
+    }
+
+    .item-right {
+        grid-area: r;
+    }
+
+    /* Content and Sidebar */
+
+    .content {
+        margin-left: 5px;
+        margin-right: 5px;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    .sidebar {
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: #fff;
+    }
+
+    /* Other */
+}

@@ -1,3 +1,5 @@
+@import "style_1280.css";
+
 /* Settings */
 
 * {
@@ -10,50 +12,23 @@ html,body {
     width: 100%;
     margin: auto;
     padding: 0;
+    background-color: lightgray;
 }
 
 div {
     box-sizing: border-box;
 }
 
-
-
 /* Header and Footer */
 
 .header {
     width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
+    background-color: #fff;
+    color: #333;
 }
 
 .footer {
     width: 100%;
     background-color: #333;
     color: #fff;
-    padding: 15px;
 }
-
-/* Content */
-
-.content {
-    margin: auto;
-    max-width: 1500px;
-    height: 100%;
-    padding: 15px;
-    padding-bottom: 50px;
-}
-
-/* Sidebar */
-
-.sidebar-left {
-    width: 250px;
-    float: left;
-    margin-right: 20px;
-    }
-
-.sidebar-right {
-    width: 250px;
-    float: right;
-    margin-left: 20px;
-    }
