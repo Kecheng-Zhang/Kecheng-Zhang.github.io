@@ -1,6 +1,14 @@
 /* PC screen */
 @media screen and (min-width: 1280px) {
 
+    /* Navigation Bar */
+
+    nav {
+        min-width: 1280px;
+        max-width: 100%;
+        list-style: none;
+    }
+
     /* Header and Footer contents*/
 
     .header-content {
@@ -8,8 +16,7 @@
         min-width: 1280px;
         max-width: 1600px;
         height: 100%;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px;
     }
 
     .footer-content {
@@ -17,8 +24,7 @@
         min-width: 1280px;
         max-width: 1600px;
         height: 100%;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px;
     }
 
     /* Grid container and items */
