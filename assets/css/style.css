@@ -23,8 +23,9 @@ div {
 
 .header {
     width: 100%;
-    background-color: #fff;
+    background-color: #ffffffb0;
     color: #333;
+    position: fixed;
 }
 
 .footer {

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body>
+        {% include header.html %}
+
+        <div style="height: 800px; background-image: url(../img/sea1.jpg); background-size: 100%; background-attachment: fixed;">
+            <div style="height: 500px; width: 100%; margin: auto; text-align: center; padding-top: 700px;">
+                <h1>
+                    Test 1
+                </h1>
+            </div>
+        </div>
+
+
+        <div class="container-2">
+            {{ content }}
+        </div>
+
+        {% include footer.html %}
+    </body>
+
+</html>
