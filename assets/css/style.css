@@ -16,6 +16,8 @@ div {
     box-sizing: border-box;
 }
 
+
+
 /* Header and Footer */
 
 .header {
@@ -36,8 +38,22 @@ div {
 
 .content {
     margin: auto;
-    max-width: 800px;
-    min-height: 100%;
+    max-width: 1500px;
+    height: 100%;
     padding: 15px;
     padding-bottom: 50px;
 }
+
+/* Sidebar */
+
+.sidebar-left {
+    width: 250px;
+    float: left;
+    margin-right: 20px;
+    }
+
+.sidebar-right {
+    width: 250px;
+    float: right;
+    margin-left: 20px;
+    }
