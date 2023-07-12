@@ -87,6 +87,12 @@
 
     /* Post */
 
+    .post-display {
+        color: #333;
+        background-color: aqua;
+        padding: 10px;
+    }
+
     .img-true {
         height: 400px;
     }
@@ -96,11 +102,6 @@
     }
 
     /* Other */
-
-    .post-display {
-        color: #333;
-        background-color: aqua;
-    }
 
     .logo {
         width: 50px;
