@@ -85,7 +85,22 @@
         background-color: #fff;
     }
 
+    /* Post */
+
+    .img-true {
+        height: 400px;
+    }
+
+    .img-false {
+        height: 40px;
+    }
+
     /* Other */
+
+    .post-display {
+        color: #333;
+        background-color: aqua;
+    }
 
     .logo {
         width: 50px;

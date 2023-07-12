@@ -1,0 +1,27 @@
+---
+layout: base
+---
+
+<div style="background-image: url(/img/{{page.img}});">
+    {% if {{page.img}} %}
+        <div class="img-true"></div>
+    {% else %}
+        <div class="img-false"></div>
+    {% endif %}
+</div>
+
+<div class="container-3">
+
+    <div style="grid-area: l;">
+    </div>
+
+    <div style="grid-area: r;">
+    </div>
+
+    <div style="grid-area: m;">
+        <div class="content">
+            {{content}}
+        </div>
+    </div>
+
+</div>
