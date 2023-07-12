@@ -19,6 +19,7 @@
     .post-container {
         width: 100%;
         min-height: 100%;
+        padding-top: 40px;
         background-color: #fff;
     }
 
@@ -45,7 +46,7 @@
     }
 
     .post-img {
-        padding-top: 40px;
+        padding-top: 10px;
         width: 100%;
     }
 }

@@ -1,3 +1,16 @@
 @media screen and (min-width: 1280px) {
-    
+    .about-container {
+        padding-top: 40px;
+        min-height: 100%;
+        height: 100%;
+    }
+    .about-item-l {
+        grid-column: 1 / 4;
+        min-height: 100%;
+    }
+
+    .about-item-r {
+        grid-column: 4 / 6;
+        min-height: 100%;
+    }
 }
