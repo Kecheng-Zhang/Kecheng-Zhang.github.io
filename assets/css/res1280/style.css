@@ -47,22 +47,24 @@
         min-width: 1280px;
         max-width: 1600px;
         margin: auto;
-        min-height: 100%;
+        min-height: 50%;
     }
 
-    /* Content and Sidebar */
+    /* Content */
 
-    .content {
-        margin-left: 5px;
-        margin-right: 5px;
-        min-height: 100%;
+    .content-padded {
+        padding: 5px;
+    }
+
+    .content-block {
+        padding: 10px;
         background-color: #fff;
     }
 
-    .sidebar {
-        margin-left: 5px;
-        margin-right: 5px;
+    .content-block-high {
+        padding: 10px;
         background-color: #fff;
+        min-height: 100%;
     }
 
     /* Other */
