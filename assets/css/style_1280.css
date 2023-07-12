@@ -46,18 +46,6 @@
         padding: 10px 100px 10px 100px;
     }
 
-    .item3-mid {
-        grid-area: m;
-    }
-
-    .item3-left {
-        grid-area: l;
-    }
-
-    .item3-right {
-        grid-area: r;
-    }
-
     .container-2 {
         display: grid;
         grid-template-columns: 38% 62%;
@@ -70,14 +58,6 @@
         padding: 10px 100px 10px 100px;
     }
 
-    .item2-left {
-        grid-area: l;
-    }
-
-    .item2-right {
-        grid-area: r;
-    }
-
     .container-2r {
         display: grid;
         grid-template-columns: 62% 38%;
@@ -88,14 +68,6 @@
         margin: auto;
         height: 100%;
         padding: 10px 100px 10px 100px;
-    }
-
-    .item2r-left {
-        grid-area: l;
-    }
-
-    .item2r-right {
-        grid-area: r;
     }
 
     /* Content and Sidebar */
