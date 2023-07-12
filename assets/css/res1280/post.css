@@ -1,0 +1,51 @@
+@media screen and (min-width: 1280px) {
+    /* Post blocks in Blog page */
+    
+    .post-display-container {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-row: auto;
+        grid-template-areas: "l r";
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    .post-display-container:hover {
+        background-color: #e6e7ff;
+    }
+
+    /* Post page*/
+
+    .post-container {
+        width: 100%;
+        min-height: 100%;
+        background-color: #fff;
+    }
+
+    .post-item-l {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        min-height: 100%;
+    }
+
+    .post-item-m {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        min-height: 100%;
+    }
+
+    .post-item-r {
+        grid-column-start: 5;
+        grid-column-end: 6;
+        min-height: 100%;
+    }
+
+    .post-text {
+        padding: 20px;
+    }
+
+    .post-img {
+        padding-top: 40px;
+        width: 100%;
+    }
+}

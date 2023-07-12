@@ -1,4 +1,4 @@
-@import "style_1280.css";
+@import "/assets/css/res1280/style.css";
 
 /* Settings */
 
@@ -27,7 +27,7 @@ h1,h2,h3,h4,h5,h6,p {
 
 .header {
     width: 100%;
-    background-color: #ffffffb0;
+    background-color: #fff;
     position: fixed;
 }
 
