@@ -2,7 +2,7 @@
 
 @import "/assets/css/res1280/index.css";
 @import "/assets/css/res1280/about.css";
-@import "/assets/css/res1280/blog.css";
+@import "/assets/css/res1280/blogs.css";
 @import "/assets/css/res1280/post.css";
 
 @media screen and (min-width: 1280px) {
@@ -38,16 +38,20 @@
         padding: 10px 0px 10px 0px;
     }
 
-    /* Grid container and items */
+    /* Grid, container and items */
 
     .container {
-        display: grid;
-        grid-template-columns: 19% 19% 24% 19% 19%;
-        grid-template-rows: auto;
         min-width: 1280px;
         max-width: 1400px;
         margin: auto;
-        min-height: 100%;
+        min-height: 800px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 19fr 19fr 24fr 19fr 19fr;
+        grid-template-rows: 19fr 19fr 24fr 19fr 19fr;
+        margin: auto;
     }
 
     /* Content */

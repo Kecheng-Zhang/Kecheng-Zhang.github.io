@@ -4,9 +4,29 @@ title: Home
 ---
 
 <div class="index-item-l">
-    content 1
+
+    <div class="index-content">
+        content A
+    </div>
+
+    <div class="index-content">
+        content C
+    </div>
+
 </div>
 
 <div class="index-item-r">
-    content 2
+
+    <div class="index-content">
+        content B
+    </div>
+
+    <div class="index-content">
+        <h1>Latest posts</h1>
+
+        {% for post in site.posts limit:3 %}
+        {% include posts.html %}
+        {% endfor %}
+    </div>
+
 </div>
