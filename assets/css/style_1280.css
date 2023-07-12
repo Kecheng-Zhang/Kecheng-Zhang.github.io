@@ -42,7 +42,7 @@
         min-width: 1280px;
         max-width: 1600px;
         margin: auto;
-        height: 100%;
+        min-height: 100%;
         padding: 10px 100px 10px 100px;
     }
 
@@ -54,7 +54,7 @@
         min-width: 1280px;
         max-width: 1600px;
         margin: auto;
-        height: 100%;
+        min-height: 100%;
         padding: 10px 100px 10px 100px;
     }
 
@@ -66,7 +66,7 @@
         min-width: 1280px;
         max-width: 1600px;
         margin: auto;
-        height: 100%;
+        min-height: 100%;
         padding: 10px 100px 10px 100px;
     }
 
@@ -75,7 +75,7 @@
     .content {
         margin-left: 5px;
         margin-right: 5px;
-        height: 100%;
+        min-height: 100%;
         background-color: #fff;
     }
 
@@ -86,7 +86,7 @@
     }
 
     /* Post */
-
+    
     .post-container {
         display: grid;
         grid-template-columns: 80% 20%;

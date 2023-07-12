@@ -4,30 +4,28 @@ title: Blog
 permalink: /blog/
 ---
 
-<div style="grid-area: l;">
-    <div class="content" style="padding: 30px 10px 30px 10px;">
+<div style="grid-area: l; padding: 30px 10px 30px 10px;" class="content">
 
-        {% for post in site.posts %}
+    {% for post in site.posts %}
 
-        <li style="list-style: none; padding: 10px 100px 10px 10px;">
-            <a href="{{ post.url }}">
+    <li style="list-style: none; padding: 10px 70px 10px 30px;">
+        <a href="{{ post.url }}">
 
-                <div class="post-container">
-                    <div style="grid-area: l;">
-                        <h2>{{ post.title }}</h2>
-                        {{ post.description }}
-                    </div>
-                    <div style="grid-area: r; text-align: right; margin: auto;">
-                        <h3>More ></h3>
-                    </div>
+            <div class="post-container">
+                <div style="grid-area: l;">
+                    <h2>{{ post.title }}</h2>
+                    {{ post.description }}
                 </div>
+                <div style="grid-area: r; text-align: right; margin: auto;">
+                    <h3>More ></h3>
+                </div>
+            </div>
 
-            </a>
-        </li>
+        </a>
+    </li>
+    
+    {% endfor %}
         
-        {% endfor %}
-        
-    </div>
 </div>
 
 <div style="grid-area: r;">
