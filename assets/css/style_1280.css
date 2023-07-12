@@ -87,10 +87,17 @@
 
     /* Post */
 
-    .post-display {
-        color: #333;
-        background-color: aqua;
+    .post-container {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-row: auto;
+        grid-template-areas: "l r";
+        background-color: #fff;
         padding: 10px;
+    }
+
+    .post-container:hover {
+        background-color: #e6e7ff;
     }
 
     .img-true {

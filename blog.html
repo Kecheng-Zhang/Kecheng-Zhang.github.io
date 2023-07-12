@@ -5,16 +5,23 @@ permalink: /blog/
 ---
 
 <div style="grid-area: l;">
-    <div class="content">
+    <div class="content" style="padding: 30px 10px 30px 10px;">
 
         {% for post in site.posts %}
 
-        <li style="list-style: none; padding: 10px 50px 10px 50px;">
+        <li style="list-style: none; padding: 10px 100px 10px 10px;">
             <a href="{{ post.url }}">
-                <div class="post-display">
-                    <h2>{{ post.title }}</h2>
-                    {{ post.description }}
+
+                <div class="post-container">
+                    <div style="grid-area: l;">
+                        <h2>{{ post.title }}</h2>
+                        {{ post.description }}
+                    </div>
+                    <div style="grid-area: r; text-align: right; margin: auto;">
+                        <h3>More ></h3>
+                    </div>
                 </div>
+
             </a>
         </li>
         
