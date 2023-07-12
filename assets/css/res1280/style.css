@@ -1,5 +1,8 @@
 /* PC screen */
 
+@import "/assets/css/res1280/index.css";
+@import "/assets/css/res1280/about.css";
+@import "/assets/css/res1280/blog.css";
 @import "/assets/css/res1280/post.css";
 
 @media screen and (min-width: 1280px) {
