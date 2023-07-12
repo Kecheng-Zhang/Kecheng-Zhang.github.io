@@ -1,5 +1,33 @@
 <div class="footer">
     <div class="footer-content">
-        <h1>这是footer</h1>
+
+        <div style="grid-area: a;">
+            <p>All rights reserved</p>
+            
+        </div>
+
+        <div style="grid-area: b;">
+            <li style="display: inline-block;">
+                <a href="https://github.com/KechengZhang28"><img src="../img/icons/github.svg" alt="GitHub" class="logo"></a>
+                <a href="https://www.linkedin.com/in/kecheng-zhang-38482827a"><img src="../img/icons/linkedin.svg" alt="LinkedIn" class="logo"></a>
+            </li>
+        </div>
+
+        <div style="grid-area: c;">
+            Kecheng Zhang
+        </div>
+
+        <div style="grid-area: d;">
+            {% for item in site.data.navigation %}
+            <li style="display: block;">
+                <div style="width: 100px; height: 30px; text-align: right; margin-left: auto;">
+                    <a href="{{ item.link }}" {% if page.url == item.link %}style="text-shadow: #909090;"{% endif %}>
+                        <p style="color: #fff;">{{ item.name }}</p>
+                    </a>
+                </div>
+            </li>
+            {% endfor %}
+        </div>
+
     </div>
 </div>
