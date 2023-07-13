@@ -19,26 +19,7 @@
     .post-container {
         width: 100%;
         min-height: 100%;
-        padding-top: 40px;
         background-color: #fff;
-    }
-
-    .post-item-l {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        min-height: 100%;
-    }
-
-    .post-item-m {
-        grid-column-start: 2;
-        grid-column-end: 5;
-        min-height: 100%;
-    }
-
-    .post-item-r {
-        grid-column-start: 5;
-        grid-column-end: 6;
-        min-height: 100%;
     }
 
     .post-text {

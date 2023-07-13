@@ -5,37 +5,39 @@ layout: base
 <!--the content below-->
 <div class="post-container">
     <div class="container">
-
-        <div class="post-item-l">
-        </div>
-    
-        <div class="post-item-r">
-        </div>
+        <div class="header-content"></div>
+        <div class="grid">
+            <div class="item-left-tiny">
+            </div>
         
-        <!--Post-->
-        <div class="post-item-m">
-            <div class="post-content">
-    
-                <!--display img if available-->
-                {% if page.img %}
-                    <img src="/img/{{page.img}}" alt="Image" class="post-img">
-                {% else %}
-                    <div class="post-img"></div>
-                {% endif %}
-    
-                <!--main post content-->
-                <div class="post-text">
-                    <div style="text-align: left; font-size: 48px; color: darkslateblue;">{{ page.title }}</div>
-    
-                    <div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto; grid-template-areas: 'l r';">
-                        <div style="grid-area: l; text-align: left;"><p>{{ page.author }}</p></div>
-                        <div style="grid-area: r; text-align: right;"><p>{{ page.date | date_to_string }}</p></div>
+            <div class="item-right-tiny">
+            </div>
+            
+            <!--Post-->
+            <div class="item-mid">
+                <div class="post-content">
+        
+                    <!--display img if available-->
+                    {% if page.img %}
+                        <img src="/img/{{page.img}}" alt="Image" class="post-img">
+                    {% else %}
+                        <div class="post-img"></div>
+                    {% endif %}
+        
+                    <!--main post content-->
+                    <div class="post-text">
+                        <div style="text-align: left; font-size: 48px; color: darkslateblue;">{{ page.title }}</div>
+        
+                        <div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto; grid-template-areas: 'l r';">
+                            <div style="grid-area: l; text-align: left;"><p>{{ page.author }}</p></div>
+                            <div style="grid-area: r; text-align: right;"><p>{{ page.date | date_to_string }}</p></div>
+                        </div>
+        
+                        <div class="line"></div>
+                        {{page.description}}
+                        <div class="line"></div>
+                        {{content}}
                     </div>
-    
-                    <div class="line"></div>
-                    {{page.description}}
-                    <div class="line"></div>
-                    {{content}}
                 </div>
             </div>
         </div>
