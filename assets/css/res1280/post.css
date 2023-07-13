@@ -11,7 +11,7 @@
     }
 
     .post-display-container:hover {
-        background-color: #e6e7ff;
+        box-shadow: 0px 0px 5px #333;
     }
 
     /* Post page*/
