@@ -1,8 +1,5 @@
 /* PC screen */
 
-@import "/assets/css/pc/index.css";
-@import "/assets/css/pc/about.css";
-@import "/assets/css/pc/blogs.css";
 @import "/assets/css/pc/post.css";
 
 @media screen and (min-width: 1280px) {
@@ -88,13 +85,13 @@
     .index-img {
         background-image: url(/img/sea1.jpg);
         background-size: 100%;
+        background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
         margin: auto;
-        height: 10%;
+        height: 100%;
         text-align: center;
-        padding-top: 30%;
-        padding-bottom: 10%;
+        padding: 10% 0 10% 0;
     }
 
     .logo {

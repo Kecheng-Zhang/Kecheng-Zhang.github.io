@@ -48,3 +48,14 @@ h1,h2,h3,h4,h5,h6,p {
     display: flex;
     align-items: center;
 }
+
+.index-img {
+    background-image: url(/img/sea1.jpg);
+    background-size: auto 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: auto;
+    height: 40%;
+    text-align: center;
+    padding: 10% 0 10% 0;
+}
