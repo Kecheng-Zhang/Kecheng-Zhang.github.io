@@ -2,7 +2,7 @@
     <div class="footer-content">
 
         <!--The 1st block in footer-->
-        <div style="grid-area: a;">
+        <div class="footer-top">
             <li style="display: inline-block;">
                 <a href="https://github.com/Kecheng-Zhang"><img src="/img/icons/github.svg" alt="GitHub" class="logo"></a>
                 <a href="https://www.linkedin.com/in/kecheng-zhang-38482827a"><img src="/img/icons/linkedin.svg" alt="LinkedIn" class="logo"></a>
@@ -10,15 +10,15 @@
         </div>
 
         <!--The 2nd block in footer-->
-        <div style="grid-area: b;" class="center">
+        <div class="footer-mid">
                 Copyright 2023 © All Rights Reserved
         </div>
 
         <!--The 3rd block in footer-->
-        <div style="grid-area: c;">
+        <div class="footer-end">
             {% for item in site.data.navigation %}
             <li style="display: block;">
-                <div style="width: 100px; height: 30px; text-align: right; margin-left: auto;">
+                <div class="footer-nav-content">
                     <a href="{{ item.link }}" {% if page.url == item.link %}style="text-shadow: #909090;"{% endif %}>
                         <p style="color: #fff;">{{ item.name }}</p>
                     </a>

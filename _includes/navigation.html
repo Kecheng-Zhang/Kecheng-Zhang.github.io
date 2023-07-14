@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="/assets/css/navbar.css">
 
 <nav>
-  {% for item in site.data.navigation %}
-  <li style="display: inline-block;">
-    <div style="width: 100px; text-align: left;">
+  <ul class="nav-list">
+    {% for item in site.data.navigation %}
+      <div class="nav-list-item">
         <a href="{{ item.link }}" {% if page.url == item.link %}style="text-shadow: #333;"{% endif %}>
-            {{ item.name }}
+          {{ item.name }}
         </a>
-    </div>
-  </li>
-  {% endfor %}
+      </div>
+    {% endfor %}
+  </ul>
 </nav>
