@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    color: #5352ed
+    color: #1e90ff
 }
 
 h3,h4,h5,h6,p {
@@ -48,7 +48,7 @@ h3,h4,h5,h6,p {
 
 .footer {
     width: 100%;
-    background-color: #333;
+    background-color: #2f3542;
     color: #fff;
 }
 
@@ -59,6 +59,7 @@ h3,h4,h5,h6,p {
     background-color: #fff;
     margin: 10px 0 10px 0;
     border-radius: 5px;
+    box-shadow: 0px 0px 10px #dfe4ea;
 }
 
 .logo {
