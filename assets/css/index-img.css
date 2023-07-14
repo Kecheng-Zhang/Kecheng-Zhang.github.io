@@ -1,0 +1,55 @@
+.index-img {
+    background-image: url(/img/sea1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    display: table;
+    text-align: center;
+}
+
+.index-img-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+}
+
+.index-item-mid {
+    display: table;
+    text-align: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.index-item-down {
+    display: table;
+    text-align: center;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.index-img-name {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 50px;
+}
+
+.index-img-about {
+    display: table-cell;
+    vertical-align: bottom;
+    color: #ced6e0;
+    padding-bottom: 20px;
+}
+
+.index-link {
+    color: #dfe4ea;
+}
+
+.index-link:hover {
+    color: #fff;
+}
