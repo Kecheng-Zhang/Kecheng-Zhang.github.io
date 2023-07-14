@@ -14,11 +14,15 @@ title: Blogs
     <div class="content-block">
         <h1>All posts</h1>
         <div class="line-full"></div>
+
         <div class="post-block-list">
-            {% for post in site.posts %}
-            {% include post-block.html %}
+            {% for post in paginator.posts %}
+                {% include post-block.html %}
             {% endfor %}
         </div>
+
+        <div class="line-full"></div>
+        {% include paginator.html %}
     </div>
 
 </div>

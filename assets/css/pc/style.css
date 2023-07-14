@@ -1,6 +1,6 @@
 /* PC screen */
 
-@import "/assets/css/pc/post.css";
+@import "/assets/css/pc/layout.css";
 
 @media screen and (min-width: 1280px) {
 

@@ -33,6 +33,11 @@ github_username: KechengZhang28
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+
+
+paginate: 5 # posts per page
+paginate_path: "/blog/page:num/" # pagination path
 
 # Exclude from processing.
 # The following items will not be processed, by default.
