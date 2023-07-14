@@ -1,6 +1,7 @@
 @import "/assets/css/grid.css";
 
-@import "/assets/css/res1280/style.css";
+@import "/assets/css/pc/style.css";
+@import "/assets/css/portable/style.css";
 
 /* Settings */
 
