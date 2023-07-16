@@ -1,5 +1,6 @@
 
 let tags = document.getElementById("tags").querySelectorAll("div");
+show_all = document.getElementById("show-all");
 
 // show the posts
 function showPosts(id) {
@@ -14,6 +15,7 @@ function hidePosts(id) {
 // show all posts with the given tag
 function show(tag) {
     hidePosts("posts-all");
+    show_all.style.display = "unset";
     for (i=0; i<tags.length; i++) {
         if (tags[i].id != tag) {
             hidePosts("posts-".concat(tags[i].id));
@@ -29,9 +31,9 @@ function reset() {
     for (i=0; i<tags.length; i++) {
         hidePosts("posts-".concat(tags[i].id));
     }
+    show_all.style.display = "none";
 }
 
-show_all = document.getElementById("show-all");
 show_all.addEventListener("click", reset);
 
 reset();
