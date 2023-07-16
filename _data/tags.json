@@ -1,0 +1,19 @@
+---
+---
+
+{
+  "categories": 
+    [
+        {% for tag in site.tags %}
+            {
+            "name": "{{ tags[0] }}",
+            "url": "{{ site.baseurl }}/blog/tags#{{ tag[0] | slugify | url_encode }}",
+            "datas": [
+                {% for post in tag[1] %}
+                "{{ post.title }}"{% if forloop.last == false %},{% endif %}
+                {% endfor %}
+            ]
+            }{% if forloop.last == false %},{% endif %}
+        {% endfor %}
+    ]
+}

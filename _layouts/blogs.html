@@ -1,10 +1,39 @@
 ---
 layout: base
 ---
-    <div class="container">
-        <div class="header-content"></div>
-        <div class="grid">
+
+<div class="container">
+    <div class="header-content"></div>
+    <div class="grid">
+
+        <div class="item-up">
+            <div class="content-block">
+                Upper
+            </div>
+        </div>
+
+        <div class="item-left-big">
             {{ content }}
         </div>
+
+        <div class="item-right-small">
+            <div class="content-block">
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <h1 style="grid-column: 1 / 2;">
+                        Tags
+                    </h1>
+                    <div style="grid-column: 2 / 3; display: table; text-align: right;">
+                        <div style="display: table-cell; vertical-align: bottom; margin-left: auto;">
+                            <div class="tag-block" style="margin: 0px;" id="show-all">Show All</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line-full"></div>
+                    {% include tags.html %}
+                <div class="line-full"></div>
+            </div>
+        </div>
+
     </div>
+</div>
         

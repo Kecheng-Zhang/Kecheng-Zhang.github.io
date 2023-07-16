@@ -7,3 +7,7 @@
     background-color: #70a1ff;
     color: #fff;
 }
+
+.tag-block:hover {
+    background-color: #1e90ff;
+}

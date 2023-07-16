@@ -1,6 +1,10 @@
 
-{% for item in site.tags %}
-    <div class="tag-block">
-        {{ item[0] }}
-    </div>
-{% endfor %}
+<div id="tags">
+    {% for item in site.tags %}
+        <div class="tag-block" id="{{ item[0] }}">
+            {{ item[0] }}
+        </div>
+    {% endfor %}
+</div>
+
+<script src="/assets/js/filter.js"></script>

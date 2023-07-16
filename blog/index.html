@@ -3,35 +3,30 @@ layout: blogs
 title: Blogs
 ---
 
-<div class="item-up">
-    <div class="content-block">
-        Upper
-    </div>
-</div>
+<!-- All the posts -->
+<div class="content-block" id="posts-all">
+    <h1>All posts</h1>
+    <div class="line-full"></div>
 
-<div class="item-left-big">
-
-    <div class="content-block">
-        <h1>All posts</h1>
-        <div class="line-full"></div>
-
-        <div class="post-block-list">
-            {% for post in paginator.posts %}
-                {% include post-block.html %}
-            {% endfor %}
-        </div>
-
-        <div class="line-full"></div>
-        {% include paginator.html %}
+    <div class="post-block-list">
+        {% for post in paginator.posts %}
+            {% include post-block.html %}
+        {% endfor %}
     </div>
 
+    <div class="line-full"></div>
+    {% include paginator.html %}
 </div>
 
-<div class="item-right-small">
-    <div class="content-block">
-        <h1>Tags</h1>
-        <div class="line-full"></div>
-            {% include tags.html %}
-        <div class="line-full"></div>
-    </div>
-</div>
+<!-- Posts by tags-->
+{% for tag in site.tags %}
+ <div id="posts-{{ tag[0] }}" class="content-block">
+    <h1>Post wtth tag: {{ tag[0] }}</h1>
+    <div class="line-full"></div>
+
+    {% for post in tag[1] %}
+        {% include post-block-simple.html %}
+    {% endfor %}
+    
+ </div>
+{% endfor %}

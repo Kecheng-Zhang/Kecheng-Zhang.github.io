@@ -25,12 +25,8 @@ div {
     box-sizing: border-box;
 }
 
-h1 {
+h1,h2 {
     color: #1e90ff;
-}
-
-h2 {
-    color: #1e90ff
 }
 
 h3,h4,h5,h6,p {
@@ -48,7 +44,7 @@ h3,h4,h5,h6,p {
 
 .footer {
     width: 100%;
-    background-color: #2f3542;
+    background-color: #333;
     color: #fff;
 }
 
@@ -58,7 +54,7 @@ h3,h4,h5,h6,p {
     padding: 30px;
     background-color: #fff;
     margin: 10px 0 10px 0;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 0px 0px 10px #dfe4ea;
 }
 
@@ -76,7 +72,7 @@ h3,h4,h5,h6,p {
 
 .line-full {
     border: 1px solid #ced6e0;
-    margin: 30px auto 30px auto;
+    margin: 20px auto 20px auto;
     width: 100%;
 }
 
