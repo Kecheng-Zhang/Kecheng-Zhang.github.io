@@ -38,24 +38,25 @@ excerpt_separator: <!--more-->
 
 大致上，就是利用jekyll内置的变量和Liquid来寻找所有的tag，然后使用JavaScript来读取所有的tag，并且控制每个块的显示和隐藏。
 
-首先，制作tag集合。放入一个id为“tags”的一个块，然后通过{% for item in site.tags %}来遍历站内的所有tags。这样，一个tag集合就做好了，具体代码如下：
+首先，制作tag集合。放入一个id为“tags”的一个块，然后通过{% raw %}{% for item in site.tags %}{% endraw %}来遍历站内的所有tags。这样，一个tag集合就做好了，具体代码如下：
 
 ```
 <div id="tags">
-    {% for item in site.tags %}
+    {% raw %}{% for item in site.tags %}{% endraw %}
         <div class="tag-block" id="{{ item[0] }}">
-            {{ item[0] }}
+            {% raw %}{{ item[0] }}{% endraw %}
         </div>
-    {% endfor %}
+    {% raw %}{% endfor %}{% endraw %}
 </div>
 ```
 
-接下来，就可以创建一个JS脚本，使用document.getElementById("tags").querySelectorAll("div")获得包含所有tag的列表了。这样子，就可以通过通过id来控制相应块的显示和隐藏了，代码如下：
+接下来，就可以创建一个JS脚本，使用document.getElementById获得包含所有tag的列表了。这样子，就可以通过通过id来控制相应块的显示和隐藏了，代码如下：
 ```
-// show all posts with the given tag
 function show(tag) {
+
     hidePosts("posts-all");
     show_all.style.display = "unset";
+    
     for (i=0; i<tags.length; i++) {
         if (tags[i].id != tag) {
             hidePosts("posts-".concat(tags[i].id));

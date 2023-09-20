@@ -3,8 +3,12 @@ layout: base
 ---
 
 <style>
-    h1,h2,h3,h4,h5,h6,p {
-        margin: 10px 0 10px 0;
+    h1,h2,h3,h4,h5,h6 {
+        margin: 20px 0 20px 0;
+    }
+
+    p {
+        margin: 16px 0 16px 0;
     }
 </style>
 
@@ -32,7 +36,7 @@ layout: base
         
                     <!--main post content-->
                     <div class="post-text">
-                        <h1 style="text-align: left; font-size: 48px; margin-bottom: 20px;">{{ page.title }}</h1>
+                        <h1 style="text-align: left; font-size: 48px; margin-bottom: 20px; padding-top: 0px; padding-bottom: 0px;">{{ page.title }}</h1>
         
                         <div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto; grid-template-areas: 'l r';">
                             <div style="grid-area: l; text-align: left;"><p>{{ page.author }}</p></div>
