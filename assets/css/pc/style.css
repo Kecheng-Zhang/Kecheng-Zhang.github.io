@@ -71,7 +71,7 @@
     .container {
         width: 1200px;
         margin: auto;
-        min-height: 800px;
+        min-height: 100%;
     }
 
     /* Other */
