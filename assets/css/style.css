@@ -1,4 +1,36 @@
+@import "/assets/css/header.css";
+
+* {
+  margin: 0;
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  background-color: #f1f2f6
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.grey {
+  background-color: #f0f0f0;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_item {
+  flex-grow: 1;
 }

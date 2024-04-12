@@ -3,41 +3,21 @@ layout: index
 title: Home
 ---
 
-<div class="item-up">
-    <div class="content-block">
-        <p>网页翻译还没有被弄好...</p>
-        <p>Localization is not completed yet...</p>
-    </div>
-</div>
+<div class="flex_col">
 
-<div class="item-left-small">
-
-    <div class="content-block">
-        content A
+    <div class="flex_row">
+        <div class="flex_item" style="height: 560px; border-radius: 16px; background-color: antiquewhite;">Test 1</div>
     </div>
 
-    <div class="content-block">
-        content C
+    <div class="flex_row">
+        <p class="flex_item">Test 2</p>
+        <h2 class="flex_item">Test3</h2>
     </div>
 
-</div>
-
-<div class="item-right-big">
-
-    <div class="content-block">
-        content B
+    <div class="flex_row">
+        <p class="flex_item">Test 4</p>
+        <h3 class="flex_item">Test5</h3>
+        <p class="flex_item">Test 6</p>
     </div>
-
-    <div class="content-block">
-        <h1>Latest posts</h1>
-        <div class="line-full"></div>
-
-        <div class="post-block-list">
-            {% for post in site.posts limit:3 %}
-            {% include post-block.html %}
-            {% endfor %}
-        </div>
-
-    </div>
-
+    
 </div>

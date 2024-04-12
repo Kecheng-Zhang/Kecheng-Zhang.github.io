@@ -1,11 +1,8 @@
-<nav>
-  <div class="nav-list">
-    {% for item in site.data.navigation %}
-      <div class="nav-list-item">
-        <a href="{{ item.link }}" {% if page.url == item.link %}style="text-shadow: #333;"{% endif %}>
-          {{ item.name }}
-        </a>
-      </div>
-    {% endfor %}
+
+{% for item in site.data.navigation %}
+  <div class="nav-list-item">
+    <a href="{{ item.link }}" {% if page.url == item.link %}style="text-shadow: #333;"{% endif %}>
+      {{ item.name }}
+    </a>
   </div>
-</nav>
+{% endfor %}

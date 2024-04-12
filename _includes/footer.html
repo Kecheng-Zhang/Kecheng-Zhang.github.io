@@ -1,78 +1,17 @@
 <style>
-    @media screen and (min-width: 1280px) {
-        .footer {
-        width: 100%;
+    .footer {
         background-color: #333;
         color: #fff;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: auto 300px auto;
-            grid-template-rows: auto;
-            grid-template-areas: "a b c";
-            margin: auto;
-            width: 1200px;
-            min-height: 100px;
-            height: 100%;
-            padding: 30px 0px 30px 0px;
-        }
-
-        .footer-top {
-            grid-area: a;
-        }
-
-        .footer-mid {
-            grid-area: b;
-            margin: auto;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-end {
-            grid-area: c;
-        }
-
-        .footer-nav-content {
-            width: 100px;
-            height: 30px;
-            text-align: right;
-            margin-left: auto;
-        }
-    }
-    
-    @media screen and (max-width: 1280px){
-        
+        text-align: center;
+        margin: 0 auto;
+        height: 100px;
+        width: 100%;
+        position: fixed;
     }
 </style>
 
 <div class="footer">
-    <div class="footer-content">
-
-        <!--The 1st block in footer-->
-        <div class="footer-top">
-            <li style="display: inline-block;">
-                <a href="https://github.com/Kecheng-Zhang"><img src="/img/icons/github-white.svg" alt="GitHub" class="logo"></a>
-                <a href="https://www.linkedin.com/in/kecheng-zhang-38482827a"><img src="/img/icons/linkedin-white.svg" alt="LinkedIn" class="logo"></a>
-            </li>
-        </div>
-
-        <!--The 2nd block in footer-->
-        <div class="footer-mid">
+    <div style="align-content: center;">
                 Copyright 2023 © All Rights Reserved
-        </div>
-
-        <!--The 3rd block in footer-->
-        <div class="footer-end">
-            {% for item in site.data.navigation %}
-            <li style="display: block;">
-                <div class="footer-nav-content">
-                    <a href="{{ item.link }}" {% if page.url == item.link %}style="text-shadow: #909090;"{% endif %}>
-                        <p style="color: #fff;">{{ item.name }}</p>
-                    </a>
-                </div>
-            </li>
-            {% endfor %}
-        </div>
-
     </div>
 </div>
