@@ -31,11 +31,6 @@ github_username: Kecheng-Zhang
 theme: 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
-
-
-paginate: 8 # posts per page
-paginate_path: "/blog/page:num/" # pagination path
 
 defaults:
   -

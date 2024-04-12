@@ -3,11 +3,18 @@
 
     {% include head.html %}
 
+    <style>
+        body {
+            margin: auto;
+            padding: 0;
+        }
+    </style>
+
     <body>
         {% include header.html %}
-
+        <div class="container">
         {{ content }}
-
+        </div>
         {% include footer.html %}
     </body>
 
