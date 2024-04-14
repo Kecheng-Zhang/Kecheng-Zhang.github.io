@@ -1,9 +1,13 @@
 <div class = "header">
     <div class="container">
-        <div class="flex_container">
-            <div class="flex_item">
-                {% include navigation.html %}
+        <div class="header_flex">
+            {% for item in site.data.navigation %}
+            <div class="header_flex_item">
+                <a class="header_nav" href="{{ item.link }}" {% if page.url == item.link %} style="text-shadow: #333;"{% endif %}>
+                {{ item.name }}
+                </a>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
