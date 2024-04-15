@@ -4,14 +4,15 @@ title: Blogs
 ---
 
 <div class="blogs_container">
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
-    <div class="blogs_item"></div>
+    <div class="blogs_box1">
+        {% for post in site.posts %}
+            <div class="blogs_item">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="blogs_box2">
+    </div>
+    
 </div>
