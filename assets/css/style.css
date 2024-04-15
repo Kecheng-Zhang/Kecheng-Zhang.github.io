@@ -1,6 +1,8 @@
 @import "/assets/css/header.css";
 @import "/assets/css/footer.css";
 @import "/assets/css/index.css";
+@import "/assets/css/about.css";
+@import "/assets/css/blogs.css";
 
 * {
   margin: 0;
