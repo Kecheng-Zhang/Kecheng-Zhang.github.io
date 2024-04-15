@@ -1,3 +1,9 @@
+.index_img {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
 .index_container {
     margin: 30px 0 30px 0;
     display: flex;
@@ -23,7 +29,7 @@
 
 .index_item_2 {
     width: 465px;
-    height: 500px;
+    height: 400px;
 }
 
 .index_item_3 {
@@ -32,8 +38,8 @@
 }
 
 .index_item_4 {
-    width: 100%;
-    height: 120px;
+    width: 465px;
+    height: 100px;
 
 }
 
@@ -41,4 +47,15 @@
     border-radius: 16px;
     background-color: whitesmoke;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.index_button {
+    padding: 10px 24px;
+    margin: 60px auto;
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+    border: 3px solid #333;
+    border-radius: 100px;
 }
