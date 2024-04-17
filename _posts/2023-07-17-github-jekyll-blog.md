@@ -7,7 +7,7 @@ lang: zh
 excerpt_separator: <!--more-->
 ---
 
-介绍了使用Github pages + jekyll制作博客的记录。进阶的内容包括tag分类搜索的实现以及分页。
+
 <!--more-->
 
 # 简介

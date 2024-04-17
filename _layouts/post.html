@@ -2,53 +2,16 @@
 layout: base
 ---
 
-<style>
-    h1,h2,h3,h4,h5,h6 {
-        margin: 20px 0 20px 0;
-    }
-
-    p {
-        margin: 16px 0 16px 0;
-    }
-</style>
-
-<!--the content below-->
-<div class="post-container">
-    <div class="container">
-        <div class="header-content"></div>
-        <div class="grid">
-            <div class="item-left-tiny">
-            </div>
-        
-            <div class="item-right-tiny">
-            </div>
-            
-            <!--Post-->
-            <div class="item-mid">
-                <div class="post-content">
-        
-                    <!--display img if available-->
-                    {% if page.img %}
-                        <img src="/img/{{page.img}}" alt="Image" class="post-img">
-                    {% else %}
-                        <div class="post-img"></div>
-                    {% endif %}
-        
-                    <!--main post content-->
-                    <div class="post-text">
-                        <h1 style="text-align: left; font-size: 48px; margin-bottom: 20px; padding-top: 0px; padding-bottom: 0px;">{{ page.title }}</h1>
-        
-                        <div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto; grid-template-areas: 'l r';">
-                            <div style="grid-area: l; text-align: left;"><p>{{ page.author }}</p></div>
-                            <div style="grid-area: r; text-align: right;"><p>{{ page.date | date_to_string }}</p></div>
-                        </div>
-        
-                        <div class="line-short"></div>
-                        {{content}}
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<div class="header_placeholder"></div>
+<div class="container">
+    <img src="/img/{{page.img}}" class="post_main_img" alt="{{post.img}}"/>
+    <div class="post_title">
+        {{page.title}}
+    </div>
+    <div class="post_content">
+        {{page.date | date: "%b %d %Y"}}
+    </div>
+    <div class="post_content">
+        {{content}}
     </div>
 </div>
