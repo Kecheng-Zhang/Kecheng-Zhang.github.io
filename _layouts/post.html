@@ -5,13 +5,13 @@ layout: base
 <div class="header_placeholder"></div>
 <div class="container">
     <img src="/img/{{page.img}}" class="post_main_img" alt="{{post.img}}"/>
-    <div class="post_title">
-        {{page.title}}
-    </div>
     <div class="post_tags">
         {% for item in site.tags %}
             {{ item[0] }}
         {% endfor %}
+    </div>
+    <div class="post_title">
+        {{page.title}}
     </div>
     <div class="post_time">
         {{page.date | date: "%b %d %Y"}}
