@@ -56,7 +56,6 @@
 
 .index_content {
     border-radius: 16px;
-    background-color: whitesmoke;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -65,8 +64,8 @@
     margin: 60px auto;
     text-align: center;
     color: #333;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     border: 3px solid #333;
     border-radius: 100px;
     text-decoration: none;
@@ -76,10 +75,10 @@
     padding: 10px 24px 12px 24px;
     margin: 60px auto;
     text-align: center;
-    color: #ffffff;
+    color: #fff;
     background-color: #333;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     border: 3px solid #333;
     border-radius: 100px;
     text-decoration: none;
