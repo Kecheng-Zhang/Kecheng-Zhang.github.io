@@ -2,8 +2,7 @@
 title: 制作曲奇
 author: 
 img: 
-tags:
-  - Cooking
+tags: Cooking
 lang: zh
 excerpt_separator: <!--more-->
 ---

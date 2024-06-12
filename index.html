@@ -5,33 +5,104 @@ title: Home
 
 <div class="index_container">
 
-        <div class="index_content index_item_0">Test 0</div>
+    <!-- <div class="index_content index_item_0">Test 0</div> -->
 
-        <div class="index_title" >Featured</div>
+    <div class="index_title" >Featured</div>
 
-        <div class="index_content index_item_1">Test 1</div>
+    <div class="index_content index_item_1" id="featured-1">
+        <div class="index_content_img" id="featured-1-img"></div>
+        <div class="index_content_text" id="featured-1-text">Test 1</div>
+    </div>
 
-        <div class="index_content index_item_3">Test 2</div>
-        <div class="index_content index_item_3">Test 3</div>
-        <div class="index_content index_item_3">Test 4</div>
+    <div class="index_content index_item_3" id="featured-2">
+        <div class="index_content_img" id="featured-2-img"></div>
+        <div class="index_content_text" id="featured-2-text">Test 2</div>
+    </div>
 
-        <div class="index_title">Latest</div>
+    <div class="index_content index_item_3" id="featured-3">
+        <div class="index_content_img" id="featured-3-img"></div>
+        <div class="index_content_text" id="featured-3-text">Test 3</div>
+    </div>
 
-        <div class="index_content index_item_2">Test 4</div>
-        <div class="index_content index_item_2">Test 5</div>
-        <div class="index_content index_item_3">Test 6</div>
-        <div class="index_content index_item_3">Test 7</div>
-        <div class="index_content index_item_3">Test 8</div>
+    <div class="index_content index_item_3" id="featured-4">
+        <div class="index_content_img" id="featured-4-img"></div>
+        <div class="index_content_text" id="featured-4-text">Test 4</div>
+    </div>
 
-        <div class="index_title">More</div>
+    <div class="index_title">Latest</div>
 
-        <div class="index_content index_item_3">Test 9</div>
-        <div class="index_content index_item_3">Test 10</div>
-        <div class="index_content index_item_3">Test 11</div>
-        <div class="index_content index_item_3">Test 12</div>
-        <div class="index_content index_item_3">Test 13</div>
-        <div class="index_content index_item_3">Test 14</div>
+    <div class="index_content index_item_2" id="latest-1">
+        <div class="index_content_img" id="latest-1-img"></div>
+        <div class="index_content_text" id="latest-1-text">Test 5</div>
+    </div>
 
-        <a href="/blog" class="index_button">All Blogs</a>
+    <div class="index_content index_item_2" id="latest-2">
+        <div class="index_content_img" id="latest-2-img"></div>
+        <div class="index_content_text" id="latest-2-text">Test 6</div>
+    </div>
+
+    <div class="index_content index_item_3" id="latest-3">
+        <div class="index_content_img" id="latest-3-img"></div>
+        <div class="index_content_text" id="latest-3-text">Test 7</div>
+    </div>
+
+    <div class="index_content index_item_3" id="latest-4">
+        <div class="index_content_img" id="latest-4-img"></div>
+        <div class="index_content_text" id="latest-4-text">Test 8</div>
+    </div>
+
+    <div class="index_content index_item_3" id="latest-5">
+        <div class="index_content_img" id="latest-5-img"></div>
+        <div class="index_content_text" id="latest-5-text">Test 9</div>
+    </div>
+
+    <div class="index_title" id="index-more">More</div>
+
+    <div class="index_content index_item_3" id="more-1">
+            <div class="index_content_img" id="more-1-img"></div>
+            <div class="index_content_text" id="more-1-text">Test 10</div>
+    </div>
+
+    <div class="index_content index_item_3" id="more-2">
+        <div class="index_content_img" id="more-2-img"></div>
+        <div class="index_content_text" id="more-2-text">Test 11</div>
+    </div>
+
+    <div class="index_content index_item_3" id="more-3">
+        <div class="index_content_img" id="more-3-img"></div>
+        <div class="index_content_text" id="more-3-text">Test 12</div>
+    </div>
+
+    <a href="/blog" class="index_button">All Blogs</a>
     
 </div>
+
+<script>
+    function hideBlock(id) {
+        document.getElementById(id).style.display = "none";
+    }
+    posts = {{ site.posts | jsonify }};
+    console.log(posts);
+    if (posts.length < 5) {
+        hideBlock("latest-3");
+        hideBlock("latest-4");
+        hideBlock("latest-5");
+        hideBlock("index-more");
+        hideBlock("more-1");
+        hideBlock("more-2");
+        hideBlock("more-3");
+    }
+
+    for (i = 0; i < Math.min(posts.length, 5); i++) {
+        element = document.getElementById("latest-" + (i + 1));
+        postImg = posts[i].img;
+        if (postImg == null) {
+            postImg = "default.jpg";
+        }
+        element.style.backgroundImage = "url(" + "{{ site.baseurl }}/img/" + postImg + ")";
+        element.style.backgroundRepeat = "no-repeat";
+        element.style.backgroundPosition = "center";
+        element.style.backgroundSize = "cover";
+    }
+
+</script>

@@ -57,6 +57,21 @@
 .index_content {
     border-radius: 16px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: auto 120px;
+    grid-template-columns: auto;
+}
+
+.index_content_img {
+    height: 100%;
+}
+
+.index_content_text {
+    border-radius: 0 0 16px 16px;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    color: #333;
 }
 
 .index_button {
