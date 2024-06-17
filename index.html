@@ -8,68 +8,24 @@ title: Home
     <!-- <div class="index_content index_item_0">Test 0</div> -->
 
     <div class="index_title" >Featured</div>
-
-    <div class="index_content index_item_1" id="featured-1">
-        <div class="index_content_img" id="featured-1-img"></div>
-        <div class="index_content_text" id="featured-1-text">Test 1</div>
-    </div>
-
-    <div class="index_content index_item_3" id="featured-2">
-        <div class="index_content_img" id="featured-2-img"></div>
-        <div class="index_content_text" id="featured-2-text">Test 2</div>
-    </div>
-
-    <div class="index_content index_item_3" id="featured-3">
-        <div class="index_content_img" id="featured-3-img"></div>
-        <div class="index_content_text" id="featured-3-text">Test 3</div>
-    </div>
-
-    <div class="index_content index_item_3" id="featured-4">
-        <div class="index_content_img" id="featured-4-img"></div>
-        <div class="index_content_text" id="featured-4-text">Test 4</div>
-    </div>
+    <div class="index_content index_item_1" id="featured-1"></div>
+    <div class="index_content index_item_3" id="featured-2"></div>
+    <div class="index_content index_item_3" id="featured-3"></div>
+    <div class="index_content index_item_3" id="featured-4"></div>
 
     <div class="index_title">Latest</div>
-
-    <div class="index_content index_item_2" id="latest-1">
-        <div class="index_content_img" id="latest-1-img"></div>
-        <div class="index_content_text" id="latest-1-text">Test 5</div>
-    </div>
-
-    <div class="index_content index_item_2" id="latest-2">
-        <div class="index_content_img" id="latest-2-img"></div>
-        <div class="index_content_text" id="latest-2-text">Test 6</div>
-    </div>
-
-    <div class="index_content index_item_3" id="latest-3">
-        <div class="index_content_img" id="latest-3-img"></div>
-        <div class="index_content_text" id="latest-3-text">Test 7</div>
-    </div>
-
-    <div class="index_content index_item_3" id="latest-4">
-        <div class="index_content_img" id="latest-4-img"></div>
-        <div class="index_content_text" id="latest-4-text">Test 8</div>
-    </div>
-
-    <div class="index_content index_item_3" id="latest-5">
-        <div class="index_content_img" id="latest-5-img"></div>
-        <div class="index_content_text" id="latest-5-text">Test 9</div>
-    </div>
+    <div class="index_content index_item_2" id="latest-1"></div>
+    <div class="index_content index_item_2" id="latest-2"></div>
+    <div class="index_content index_item_3" id="latest-3"></div>
+    <div class="index_content index_item_3" id="latest-4"></div>
+    <div class="index_content index_item_3" id="latest-5"></div>
 
     <div class="index_title" id="index-more">More</div>
-
-    <div class="index_content index_item_3" id="more-1">
-            <div class="index_content_img" id="more-1-img"></div>
-            <div class="index_content_text" id="more-1-text">Test 10</div>
-    </div>
-
-    <div class="index_content index_item_3" id="more-2">
-        <div class="index_content_img" id="more-2-img"></div>
-        <div class="index_content_text" id="more-2-text">Test 11</div>
-    </div>
+    <div class="index_content index_item_3" id="more-1"></div>
+    <div class="index_content index_item_3" id="more-2"></div>
 
     <div class="index_content index_item_3" id="more-3">
-        <div class="index_content_img" id="more-3-img"></div>
+        <a href="/blog"><div class="index_content_img" id="more-3-img"></div></a>
         <div class="index_content_text" id="more-3-text">Test 12</div>
     </div>
 
@@ -78,9 +34,68 @@ title: Home
 </div>
 
 <script>
+    /**
+     * Create a div element with a background image
+     * @param {string} link - The link to the post
+     * @param {string} img_src - The source of the image
+     * @param {string} alt - The alt text of the image
+     * @returns {HTMLDivElement} - The created div element
+     */
+    function createImg(link, img_src, alt = "Image") {
+        img_src = "url(" + "{{ site.baseurl }}/img/" + postImg + ")";
+        var linkElement = document.createElement("a");
+        linkElement.href = link;
+        var imgElement = document.createElement("div");
+        imgElement.style.backgroundImage = img_src;
+        imgElement.style.backgroundRepeat = "no-repeat";
+        imgElement.style.backgroundPosition = "center";
+        imgElement.style.backgroundSize = "cover";
+        imgElement.style.height = "100%";
+        imgElement.style.borderRadius = "16px 16px 0 0";
+        linkElement.appendChild(imgElement);
+        return linkElement;
+    }
+
+    /**
+     * Create a div element with text
+     * @param {string} link - The link to the post
+     * @param {string} title - The title of the post
+     * @param {string} date - The date of the post
+     * @returns {HTMLDivElement} - The created div element
+     */
+    function createText(link, title, date) {
+        var linkElement = document.createElement("a");
+        linkElement.href = link;
+        linkElement.style.borderRadius = "0 0 16px 16px";
+        linkElement.style.backgroundColor = "#fff";
+        linkElement.style.textDecoration = "none";
+        linkElement.style.display = "grid";
+        linkElement.style.gridTemplateRows = "2fr 1fr";
+        var textElement = document.createElement("div");
+        textElement.innerHTML = title;
+        textElement.style.margin = "20px";
+        textElement.style.fontSize = "20px";
+        textElement.style.fontWeight = "bold";
+        textElement.style.color = "#333";
+        var subTextElement = document.createElement("div");
+        subTextElement.innerHTML = date.split(" ")[0];
+        subTextElement.style.fontSize = "18px";
+        subTextElement.style.margin = "20px";
+        subTextElement.style.fontWeight = "bold";
+        subTextElement.style.color = "#808080"
+        linkElement.appendChild(textElement);
+        linkElement.appendChild(subTextElement);
+        return linkElement;
+    }
+
+    /**
+     * Hide a block
+     * @param {string} id - The id of the block
+     */
     function hideBlock(id) {
         document.getElementById(id).style.display = "none";
     }
+
     posts = {{ site.posts | jsonify }};
     console.log(posts);
     if (posts.length < 5) {
@@ -99,10 +114,9 @@ title: Home
         if (postImg == null) {
             postImg = "default.jpg";
         }
-        element.style.backgroundImage = "url(" + "{{ site.baseurl }}/img/" + postImg + ")";
-        element.style.backgroundRepeat = "no-repeat";
-        element.style.backgroundPosition = "center";
-        element.style.backgroundSize = "cover";
+        element.appendChild(createImg(posts[i].url, postImg, posts[i].title));
+        element.appendChild(createText(posts[i].url, posts[i].title, posts[i].date));
+
     }
 
 </script>
