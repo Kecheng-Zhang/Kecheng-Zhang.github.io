@@ -7,7 +7,7 @@ title: Home
 
     <!-- <div class="index_content index_item_0">Test 0</div> -->
 
-    <div class="index_title" >Featured</div>
+    <div class="index_title" id="index-feature">Featured</div>
     <div class="index_content index_item_1" id="featured-1"></div>
     <div class="index_content index_item_3" id="featured-2"></div>
     <div class="index_content index_item_3" id="featured-3"></div>
@@ -96,9 +96,31 @@ title: Home
         document.getElementById(id).style.display = "none";
     }
 
+    // Get the posts including the featured ones and the latest ones
     posts = {{ site.posts | jsonify }};
+    var featured = [];
+    var latest = [];
+    for (i = 0; i < posts.length; i++) {
+        if (posts[i].featured) {
+            featured.push(posts[i]);
+        } else {
+            latest.push(posts[i]);
+        }
+    }
     console.log(posts);
-    if (posts.length < 5) {
+    // Hide the featured blocks
+    if (featured.length < 4) {
+        hideBlock("featured-2");
+        hideBlock("featured-3");
+        hideBlock("featured-4");
+    }
+    if (featured.length < 1) {
+        hideBlock("featured-1");
+        hideBlock("index-feature");
+    }
+
+    // Hide the latest blocks
+    if (latest.length < 5) {
         hideBlock("latest-3");
         hideBlock("latest-4");
         hideBlock("latest-5");

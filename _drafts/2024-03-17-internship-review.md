@@ -4,6 +4,7 @@ author:
 img: 
 tags: 
 lang: zh
+featured: false
 excerpt_separator: <!--more-->
 ---
 整理第一次实习的经历，主要是软件开发方面所学到的知识。

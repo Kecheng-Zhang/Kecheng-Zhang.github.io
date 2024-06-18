@@ -1,9 +1,11 @@
 ---
 title: 制作曲奇
-author: 
+author: Kecheng Zhang
 img: 
-tags: Cooking
+tags:
+  - Cooking
 lang: zh
+featured: false
 excerpt_separator: <!--more-->
 ---
 

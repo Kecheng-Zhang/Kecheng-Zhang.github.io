@@ -1,12 +1,14 @@
 ---
 title: 建立个人博客
-author: 
+author: Kecheng Zhang
 img: sea1.jpg
-tags: Github Jekyll
+tags:
+  - Github
+  - Jekyll
 lang: zh
+featured: false
 excerpt_separator: <!--more-->
 ---
-
 
 <!--more-->
 
