@@ -7,11 +7,8 @@ tags:
   - Jekyll
 lang: zh
 featured: false
-excerpt_separator: <!--more-->
+excerpt:
 ---
-
-<!--more-->
-
 # 简介
 
 博客是分享各种信息的网站，包括生活记录，或者是技术性的指南之类的。我开始想建立博客的原因其实很简单，就是感觉拥有自己的网站很酷。

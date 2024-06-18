@@ -6,10 +6,8 @@ tags:
   - Cooking
 lang: zh
 featured: false
-excerpt_separator: <!--more-->
+excerpt: 自己制作饼干的经历
 ---
-
-<!--more-->
 # 配方
 我试着自己做了一些饼干，主要的配方就是面粉，黄油，糖。我从网上找到了几个不同的配方，总结了一下，并且找出了个人觉得比较好的比例，配方如下：
 - 低筋面粉120g
