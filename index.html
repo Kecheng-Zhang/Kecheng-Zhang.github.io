@@ -7,137 +7,129 @@ title: Home
 
     <!-- <div class="index_content index_item_0">Test 0</div> -->
 
-    <div class="index_title" id="index-feature">Featured</div>
-    <div class="index_content index_item_1" id="featured-1"></div>
-    <div class="index_content index_item_3" id="featured-2"></div>
-    <div class="index_content index_item_3" id="featured-3"></div>
-    <div class="index_content index_item_3" id="featured-4"></div>
+    <div class="index_title" id="index-featured">Featured</div>
 
-    <div class="index_title">Latest</div>
-    <div class="index_content index_item_2" id="latest-1"></div>
-    <div class="index_content index_item_2" id="latest-2"></div>
-    <div class="index_content index_item_3" id="latest-3"></div>
-    <div class="index_content index_item_3" id="latest-4"></div>
-    <div class="index_content index_item_3" id="latest-5"></div>
+    <div class="index_title" id="index-latest">Latest</div>
 
     <div class="index_title" id="index-more">More</div>
-    <div class="index_content index_item_3" id="more-1"></div>
-    <div class="index_content index_item_3" id="more-2"></div>
-
-    <div class="index_content index_item_3" id="more-3">
-        <a href="/blog"><div class="index_content_img" id="more-3-img"></div></a>
-        <div class="index_content_text" id="more-3-text">Test 12</div>
-    </div>
 
     <a href="/blog" class="index_button">All Blogs</a>
     
 </div>
 
 <script>
-    /**
-     * Create a div element with a background image
-     * @param {string} link - The link to the post
-     * @param {string} img_src - The source of the image
-     * @param {string} alt - The alt text of the image
-     * @returns {HTMLDivElement} - The created div element
-     */
-    function createImg(link, img_src, alt = "Image") {
-        img_src = "url(" + "{{ site.baseurl }}/img/" + postImg + ")";
-        var linkElement = document.createElement("a");
-        linkElement.href = link;
-        var imgElement = document.createElement("div");
-        imgElement.style.backgroundImage = img_src;
-        imgElement.style.backgroundRepeat = "no-repeat";
-        imgElement.style.backgroundPosition = "center";
-        imgElement.style.backgroundSize = "cover";
-        imgElement.style.height = "100%";
-        imgElement.style.borderRadius = "16px 16px 0 0";
-        linkElement.appendChild(imgElement);
-        return linkElement;
+
+    function createImg(name, alt, radius) {
+        var src = "/img/" + name;
+        var img = document.createElement("div");
+        img.style.backgroundImage = "url(" + src + ")";
+        img.style.backgroundSize = "cover";
+        img.style.backgroundPosition = "center";
+        img.style.borderRadius = radius;
+        return img;
     }
 
     /**
-     * Create a div element with text
-     * @param {string} link - The link to the post
-     * @param {string} title - The title of the post
-     * @param {string} date - The date of the post
-     * @returns {HTMLDivElement} - The created div element
+     * @param {Object} post 
+     * @param {String} align 
+     * @param {String} radius 
+     * @param {Number} title_font_size - in px
+     * @param {Number} tag_font_size - in px
+     * @returns {Element} HTML element
      */
-    function createText(link, title, date) {
-        var linkElement = document.createElement("a");
-        linkElement.href = link;
-        linkElement.style.borderRadius = "0 0 16px 16px";
-        linkElement.style.backgroundColor = "#fff";
-        linkElement.style.textDecoration = "none";
-        linkElement.style.display = "grid";
-        linkElement.style.gridTemplateRows = "2fr 1fr";
-        var textElement = document.createElement("div");
-        textElement.innerHTML = title;
-        textElement.style.margin = "20px";
-        textElement.style.fontSize = "20px";
-        textElement.style.fontWeight = "bold";
-        textElement.style.color = "#333";
-        var subTextElement = document.createElement("div");
-        subTextElement.innerHTML = date.split(" ")[0];
-        subTextElement.style.fontSize = "18px";
-        subTextElement.style.margin = "20px";
-        subTextElement.style.fontWeight = "bold";
-        subTextElement.style.color = "#808080"
-        linkElement.appendChild(textElement);
-        linkElement.appendChild(subTextElement);
-        return linkElement;
+    function createText(post, align, radius, font_sizes) {
+        var textBlock = document.createElement("div");
+        var titleBlock = document.createElement("div");
+        var tagBlock = document.createElement("div");
+        var dateBlock = document.createElement("div");
+        // tag
+        tagBlock.innerHTML = post.tags;
+        tagBlock.className = "index_post_tag";
+        tagBlock.style.fontSize = font_sizes[1] + "px";
+        textBlock.appendChild(tagBlock);
+        // title
+        titleBlock.innerHTML = post.title;
+        titleBlock.className = "index_post_title";
+        titleBlock.style.flexGrow = 1;
+        titleBlock.style.fontSize = font_sizes[0] + "px";
+        textBlock.appendChild(titleBlock);
+        // date 
+        dateBlock.innerHTML = post.date.split(" ")[0]; // FIXME
+        dateBlock.className = "index_post_date";
+        dateBlock.style.alignSelf = "flex-end";
+        dateBlock.style.fontSize = font_sizes[1] + "px";
+        textBlock.appendChild(dateBlock);
+        // style
+        textBlock.style.borderRadius = radius;
+        textBlock.style.padding = "20px";
+        textBlock.style.display = "flex";
+        textBlock.style.backgroundColor = "#fff";
+        textBlock.style.flexDirection = "column";
+        return textBlock;
     }
-
-    /**
-     * Hide a block
-     * @param {string} id - The id of the block
-     */
-    function hideBlock(id) {
-        document.getElementById(id).style.display = "none";
-    }
-
-    // Get the posts including the featured ones and the latest ones
-    posts = {{ site.posts | jsonify }};
-    var featured = [];
-    var latest = [];
-    for (i = 0; i < posts.length; i++) {
-        if (posts[i].featured) {
-            featured.push(posts[i]);
+    
+    function createBlock(id, row_num, height, text_space, text_pos,
+    post, font_sizes) {
+        var total_width = 960;
+        var gap_size = 30;
+        var width = (total_width - gap_size * (row_num - 1)) / row_num;
+        var container = document.createElement("div");
+        container.style.width = width + "px";
+        container.style.height = height + "px";
+        container.style.display = "grid";
+        container.style.borderRadius = "16px 16px 18px 18px";
+        container.style.backgroundColor = "#fff";
+        container.style.boxShadow = "0 0 20px rgba(0, 0, 0, 0.1)";
+        var img_radius = "";
+        var text_radius = "";
+        if (text_pos == "left") {
+            container.style.gridTemplateColumns = text_space + "px auto";
+            container.style.gridTemplateRows = "auto";
+            img_radius = "16px 0 0 16px";
+            text_radius = "0 16px 16px 0";
+        } else if (text_pos == "right") {
+            container.style.gridTemplateColumns = "auto " + text_space + "px";
+            container.style.gridTemplateRows = "auto";
+            img_radius = "0 16px 16px 0";
+            text_radius = "16px 0 0 16px";
         } else {
-            latest.push(posts[i]);
+            container.style.gridTemplateColumns = "auto";
+            container.style.gridTemplateRows = "auto " + text_space + "px";
+            img_radius = "16px 16px 0 0";
+            text_radius = "0 0 16px 16px";
         }
-    }
-    console.log(posts);
-    // Hide the featured blocks
-    if (featured.length < 4) {
-        hideBlock("featured-2");
-        hideBlock("featured-3");
-        hideBlock("featured-4");
-    }
-    if (featured.length < 1) {
-        hideBlock("featured-1");
-        hideBlock("index-feature");
+        // create img
+        var imgBlock = createImg(post.img, post.title, img_radius);
+        // create text
+        var textBlock = createText(post, text_pos, text_radius, font_sizes);
+
+        if (text_pos == "left") {
+            container.appendChild(textBlock);
+            container.appendChild(imgBlock);
+        } else {
+            container.appendChild(imgBlock);
+            container.appendChild(textBlock);
+        }
+        
+        return container;
     }
 
-    // Hide the latest blocks
-    if (latest.length < 5) {
-        hideBlock("latest-3");
-        hideBlock("latest-4");
-        hideBlock("latest-5");
-        hideBlock("index-more");
-        hideBlock("more-1");
-        hideBlock("more-2");
-        hideBlock("more-3");
+    function normalizePosts(posts) {
+        for (var i = 0; i < posts.length; i++) {
+            var post = posts[i];
+            post.tags = post.tags.join(" ");
+            if (post.img == null) {
+                post.img = "default.jpg";
+            }
+        }
+        return posts;
     }
 
-    for (i = 0; i < Math.min(posts.length, 5); i++) {
-        element = document.getElementById("latest-" + (i + 1));
-        postImg = posts[i].img;
-        if (postImg == null) {
-            postImg = "default.jpg";
-        }
-        element.appendChild(createImg(posts[i].url, postImg, posts[i].title));
-        element.appendChild(createText(posts[i].url, posts[i].title, posts[i].date));
-    }
+    posts = {{ site.posts | jsonify }};
+    posts = normalizePosts(posts);
+    test_block = createBlock("test", 2, 400, 160, "center", posts[1], [22,18]);
+    document.getElementById("index-featured").after(test_block);
+    test_block = createBlock("test", 2, 400, 160, "center", posts[0], [22,18]);
+    document.getElementById("index-featured").after(test_block);
 
 </script>

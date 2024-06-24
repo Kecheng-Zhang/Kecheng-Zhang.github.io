@@ -1,12 +1,12 @@
 ---
-title: 建立个人博客 博客是分享各种信息的网站
+title: 建立个人博客 博客是分享各种信息的网站博客是分享各种信息的网站
 author: Kecheng Zhang
-img: sea1.jpg
+img: qiuqiu.jpg
 tags:
   - Github
   - Jekyll
 lang: zh
-featured: true
+featured: false
 excerpt:
 ---
 # 简介
