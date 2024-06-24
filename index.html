@@ -11,7 +11,7 @@ title: Home
 
     <div class="index_title" id="index-latest">Latest</div>
 
-    <a href="/blog" class="index_button">All Blogs</a>
+    <a href="/blog" class="index_button" id="index-more">All Blogs</a>
     
 </div>
 
@@ -66,35 +66,35 @@ title: Home
         return textBlock;
     }
     
-    function createBlock(id, row_num, height, text_space, text_pos,
-    post, font_sizes) {
+    function createBlock(id, width, height, text_space, text_pos,
+    post, font_sizes, border_radius) {
         var total_width = 960;
         var gap_size = 30;
-        var width = (total_width - gap_size * (row_num - 1)) / row_num;
+        var rad = border_radius + "px";
         var container = document.createElement("div");
         container.style.width = width + "px";
         container.style.height = height + "px";
         container.style.display = "grid";
-        container.style.borderRadius = "16px 16px 18px 18px";
         container.style.backgroundColor = "#fff";
-        container.style.boxShadow = "0 0 20px rgba(0, 0, 0, 0.1)";
+        container.style.borderRadius = rad;
+        container.style.boxShadow = "0 0 30px rgba(0, 0, 0, 0.16)";
         var img_radius = "";
         var text_radius = "";
         if (text_pos == "left") {
             container.style.gridTemplateColumns = text_space + "px auto";
             container.style.gridTemplateRows = "auto";
-            img_radius = "0 16px 16px 0";
-            text_radius = "16px 0 0 16px";
+            img_radius = "0 " + rad + " " + rad + " 0";
+            text_radius = rad + " 0 0 " + rad;
         } else if (text_pos == "right") {
             container.style.gridTemplateColumns = "auto " + text_space + "px";
             container.style.gridTemplateRows = "auto";
-            img_radius = "16px 0 0 16px";
-            text_radius = "0 16px 16px 0";
+            img_radius = rad + " 0 0 " + rad;
+            text_radius = "0 " + rad + " " + rad + " 0";
         } else {
             container.style.gridTemplateColumns = "auto";
             container.style.gridTemplateRows = "auto " + text_space + "px";
-            img_radius = "16px 16px 0 0";
-            text_radius = "0 0 16px 16px";
+            img_radius = rad + " " + rad + " 0 0";
+            text_radius = "0 0 " + rad + " " + rad;
         }
         // create img
         var imgBlock = createImg(post.img, post.title, img_radius);
@@ -126,31 +126,33 @@ title: Home
     posts = {{ site.posts | jsonify }};
     posts = normalizePosts(posts);
 
-    test_block = createBlock("test", 3, 420, 180, "center", posts[0], [20,18]);
+    r = 12;
+
+    test_block = createBlock("test", 300, 420, 180, "center", posts[0], [20,14], r);
     document.getElementById("index-latest").after(test_block);
-    test_block = createBlock("test", 3, 420, 180, "center", posts[1], [20,18]);
+    test_block = createBlock("test", 300, 420, 180, "center", posts[1], [20,14], r);
     document.getElementById("index-latest").after(test_block);
-    test_block = createBlock("test", 3, 420, 180, "center", posts[2], [20,18]);
+    test_block = createBlock("test", 300, 420, 180, "center", posts[2], [20,14], r);
     document.getElementById("index-latest").after(test_block);
 
-    test_block = createBlock("test", 2, 420, 160, "center", posts[1], [22,18]);
+    test_block = createBlock("test", 465, 420, 160, "center", posts[1], [22,14], r);
     document.getElementById("index-latest").after(test_block);
-    test_block = createBlock("test", 2, 420, 160, "center", posts[2], [22,18]);
+    test_block = createBlock("test", 465, 420, 160, "center", posts[2], [22,14], r);
     document.getElementById("index-latest").after(test_block);
 
-    test_block = createBlock("test", 3, 420, 180, "center", posts[2], [20,18]);
+    test_block = createBlock("test", 300, 420, 180, "center", posts[2], [20,14], r);
     document.getElementById("index-featured").after(test_block);
-    test_block = createBlock("test", 3, 420, 180, "center", posts[0], [20,18]);
+    test_block = createBlock("test", 300, 420, 180, "center", posts[0], [20,14], r);
     document.getElementById("index-featured").after(test_block);
-    test_block = createBlock("test", 3, 420, 180, "center", posts[1], [20,18]);
-    document.getElementById("index-featured").after(test_block);
-
-    test_block = createBlock("test", 2, 420, 160, "center", posts[1], [22,18]);
-    document.getElementById("index-featured").after(test_block);
-    test_block = createBlock("test", 2, 420, 160, "center", posts[0], [22,18]);
+    test_block = createBlock("test", 300, 420, 180, "center", posts[1], [20,14], r);
     document.getElementById("index-featured").after(test_block);
 
-    test_block = createBlock("test", 1, 500, 160, "center", posts[1], [28,18]);
-    document.getElementById("index-featured").before(test_block);
+    test_block = createBlock("test", 465, 420, 160, "center", posts[1], [22,14], r);
+    document.getElementById("index-featured").after(test_block);
+    test_block = createBlock("test", 465, 420, 160, "center", posts[0], [22,14], r);
+    document.getElementById("index-featured").after(test_block);
+
+    test_block = createBlock("test", 960, 500, 140, "center", posts[0], [28,14], r);
+    document.getElementById("index-featured").after(test_block);
 
 </script>
