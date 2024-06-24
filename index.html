@@ -11,8 +11,6 @@ title: Home
 
     <div class="index_title" id="index-latest">Latest</div>
 
-    <div class="index_title" id="index-more">More</div>
-
     <a href="/blog" class="index_button">All Blogs</a>
     
 </div>
@@ -85,13 +83,13 @@ title: Home
         if (text_pos == "left") {
             container.style.gridTemplateColumns = text_space + "px auto";
             container.style.gridTemplateRows = "auto";
-            img_radius = "16px 0 0 16px";
-            text_radius = "0 16px 16px 0";
+            img_radius = "0 16px 16px 0";
+            text_radius = "16px 0 0 16px";
         } else if (text_pos == "right") {
             container.style.gridTemplateColumns = "auto " + text_space + "px";
             container.style.gridTemplateRows = "auto";
-            img_radius = "0 16px 16px 0";
-            text_radius = "16px 0 0 16px";
+            img_radius = "16px 0 0 16px";
+            text_radius = "0 16px 16px 0";
         } else {
             container.style.gridTemplateColumns = "auto";
             container.style.gridTemplateRows = "auto " + text_space + "px";
@@ -127,9 +125,32 @@ title: Home
 
     posts = {{ site.posts | jsonify }};
     posts = normalizePosts(posts);
-    test_block = createBlock("test", 2, 400, 160, "center", posts[1], [22,18]);
+
+    test_block = createBlock("test", 3, 420, 180, "center", posts[0], [20,18]);
+    document.getElementById("index-latest").after(test_block);
+    test_block = createBlock("test", 3, 420, 180, "center", posts[1], [20,18]);
+    document.getElementById("index-latest").after(test_block);
+    test_block = createBlock("test", 3, 420, 180, "center", posts[2], [20,18]);
+    document.getElementById("index-latest").after(test_block);
+
+    test_block = createBlock("test", 2, 420, 160, "center", posts[1], [22,18]);
+    document.getElementById("index-latest").after(test_block);
+    test_block = createBlock("test", 2, 420, 160, "center", posts[2], [22,18]);
+    document.getElementById("index-latest").after(test_block);
+
+    test_block = createBlock("test", 3, 420, 180, "center", posts[2], [20,18]);
     document.getElementById("index-featured").after(test_block);
-    test_block = createBlock("test", 2, 400, 160, "center", posts[0], [22,18]);
+    test_block = createBlock("test", 3, 420, 180, "center", posts[0], [20,18]);
     document.getElementById("index-featured").after(test_block);
+    test_block = createBlock("test", 3, 420, 180, "center", posts[1], [20,18]);
+    document.getElementById("index-featured").after(test_block);
+
+    test_block = createBlock("test", 2, 420, 160, "center", posts[1], [22,18]);
+    document.getElementById("index-featured").after(test_block);
+    test_block = createBlock("test", 2, 420, 160, "center", posts[0], [22,18]);
+    document.getElementById("index-featured").after(test_block);
+
+    test_block = createBlock("test", 1, 500, 160, "center", posts[1], [28,18]);
+    document.getElementById("index-featured").before(test_block);
 
 </script>
