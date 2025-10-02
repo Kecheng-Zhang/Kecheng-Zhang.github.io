@@ -126,7 +126,7 @@ title: Home
     posts = {{ site.posts | jsonify }};
     posts = normalizePosts(posts);
 
-    r = 12;
+    r = 7; // border radius
 
     test_block = createBlock("test", 300, 420, 180, "center", posts[0], [20,14], r);
     document.getElementById("index-latest").after(test_block);
