@@ -2,27 +2,17 @@
 layout: base
 ---
 
-<div class="header_placeholder"></div>
-<div class="container">
+<div class="section">
+    <div class="container is-max-tablet">
+        <div class="title is-1 mb-6">{{page.title}}</div>
+        <div>{{page.excerpt}}</div>
+    </div>
+</div>
 
-    {% if page.img %}
-        <img src="/img/{{page.img}}" class="post_main_img" alt="{{post.img}}"/>
-    {% else %}
-        <div style="height: 10px;"></div>
-    {% endif %}
-    
-    <div class="post_tags">
-        {% for tag in page.tags %}
-            {{ tag }}
-        {% endfor %}
-    </div>
-    <div class="post_title">
-        {{page.title}}
-    </div>
-    <div class="post_time">
-        {{page.date | date: "%b %d %Y"}}
-    </div>
-    <div class="post_content">
-        {{content}}
+<div class="section">
+    <div class="container is-max-tablet">
+        <div class="content">
+            {{content}}
+        </div>
     </div>
 </div>

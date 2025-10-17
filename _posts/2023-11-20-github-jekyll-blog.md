@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 建立个人博客 博客是分享各种信息的网站博客是分享各种信息的网站
 author: Kecheng Zhang
 img: qiuqiu.jpg

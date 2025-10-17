@@ -1,14 +1,16 @@
 ---
+layout: post
 title: 建立个人博客 博客是分享各种信息的网站
 author: Kecheng Zhang
 img: sea1.jpg
+lang: zh
+featured: true
+excerpt: 这是我在使用Github Pages和Jekyll搭建个人博客过程中的一些经验和体会。
 tags:
   - Github
   - Jekyll
-lang: zh
-featured: true
-excerpt:
 ---
+
 # 简介
 
 博客是分享各种信息的网站，包括生活记录，或者是技术性的指南之类的。我开始想建立博客的原因其实很简单，就是感觉拥有自己的网站很酷。

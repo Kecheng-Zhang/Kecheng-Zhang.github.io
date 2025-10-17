@@ -1,31 +1,8 @@
-@import "/assets/css/header.css";
-@import "/assets/css/footer.css";
-@import "/assets/css/index.css";
-@import "/assets/css/about.css";
-@import "/assets/css/blogs.css";
-@import "/assets/css/post.css";
-
+@import "bulma.css";
 
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url('/assets/fonts/jetbrains-mono-v18-latin-regular.woff2') format('woff2');
-}
-
-
-* {
-  margin: 0;
-}
-
-html,body {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  padding: 0;
-  background-color: #f9f9f9;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  min-height: 100%;
+    font-family: 'JetBrains Mono';
+    src: url('/assets/font/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }

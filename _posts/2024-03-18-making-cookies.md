@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 制作曲奇
 author: Kecheng Zhang
 img: 

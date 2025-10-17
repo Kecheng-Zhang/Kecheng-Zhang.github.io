@@ -1,13 +1,25 @@
-<div class = "header">
-    <div class="container">
-        <div class="header_flex">
-            {% for item in site.data.navigation %}
-            <div class="header_flex_item">
-                <a class="header_nav" href="{{ item.link }}" {% if page.url == item.link %} style="text-shadow: #333;"{% endif %}>
-                {{ item.name }}
+<!-- 头部导航栏 -->
+
+<nav class="navbar is-fixed-top has-background-white" role="navigation" aria-label="main navigation">
+    <div class="container is-max-desktop">
+        <div class="navbar-brand">
+        <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            {% for item in site.data.nav %}
+                <a class="navbar-item is-tab" href="{{ item.url }}">
+                    {{ item.title }}
                 </a>
-            </div>
             {% endfor %}
         </div>
     </div>
-</div>
+</nav>
+
+    

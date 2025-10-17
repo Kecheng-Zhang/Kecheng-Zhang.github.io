@@ -1,158 +1,52 @@
 ---
-layout: index
-title: Home
+layout: base
 ---
 
-<div class="index_container">
+<div class="container is-max-desktop my-6">
+    <div class="title is-1 is-family-code">
+        Coding...
+    </div>
 
-    <!-- <div class="index_content index_item_0">Test 0</div> -->
+    <div class="block">
+        欢迎来到我的个人网站！
+    </div>
 
-    <div class="index_title" id="index-featured">Featured</div>
-
-    <div class="index_title" id="index-latest">Latest</div>
-
-    <a href="/blog" class="index_button" id="index-more">All Blogs</a>
+    <div class="icon-text">
+        <a href="https://github.com/Kecheng-Zhang"><i class="fa-brands fa-github fa-2x has-text-text"></i></a>
+        
+    </div>
     
 </div>
 
-<script>
+<hr class="container is-max-desktop">
 
-    function createImg(name, alt, radius) {
-        var src = "/img/" + name;
-        var img = document.createElement("div");
-        img.style.backgroundImage = "url(" + src + ")";
-        img.style.backgroundSize = "cover";
-        img.style.backgroundPosition = "center";
-        img.style.borderRadius = radius;
-        return img;
-    }
+<!-- 显示置顶的blog文章 -->
+<div class="container is-max-desktop my-6">
+    <div class="title is-2">置顶</div>
+    {% for post in site.posts %}
+        {% if post.featured %}
+            {% include post_block.html post=post %}
+        {% endif %}
+    {% endfor %}
+</div>
 
-    /**
-     * @param {Object} post 
-     * @param {String} align 
-     * @param {String} radius 
-     * @param {Number} title_font_size - in px
-     * @param {Number} tag_font_size - in px
-     * @returns {Element} HTML element
-     */
-    function createText(post, align, radius, font_sizes) {
-        var textBlock = document.createElement("div");
-        var titleBlock = document.createElement("div");
-        var tagBlock = document.createElement("div");
-        var dateBlock = document.createElement("div");
-        // tag
-        tagBlock.innerHTML = post.tags;
-        tagBlock.className = "index_post_tag";
-        tagBlock.style.fontSize = font_sizes[1] + "px";
-        textBlock.appendChild(tagBlock);
-        // title
-        titleBlock.innerHTML = post.title;
-        titleBlock.className = "index_post_title";
-        titleBlock.style.flexGrow = 1;
-        titleBlock.style.fontSize = font_sizes[0] + "px";
-        textBlock.appendChild(titleBlock);
-        // date 
-        dateBlock.innerHTML = post.date.split(" ")[0]; // FIXME
-        dateBlock.className = "index_post_date";
-        dateBlock.style.alignSelf = "flex-end";
-        dateBlock.style.fontSize = font_sizes[1] + "px";
-        textBlock.appendChild(dateBlock);
-        // style
-        textBlock.style.borderRadius = radius;
-        textBlock.style.padding = "20px";
-        textBlock.style.display = "flex";
-        textBlock.style.backgroundColor = "#fff";
-        textBlock.style.flexDirection = "column";
-        return textBlock;
-    }
-    
-    function createBlock(id, width, height, text_space, text_pos,
-    post, font_sizes, border_radius) {
-        var total_width = 960;
-        var gap_size = 30;
-        var rad = border_radius + "px";
-        var container = document.createElement("div");
-        container.style.width = width + "px";
-        container.style.height = height + "px";
-        container.style.display = "grid";
-        container.style.backgroundColor = "#fff";
-        container.style.borderRadius = rad;
-        container.style.boxShadow = "0 0 30px rgba(0, 0, 0, 0.16)";
-        var img_radius = "";
-        var text_radius = "";
-        if (text_pos == "left") {
-            container.style.gridTemplateColumns = text_space + "px auto";
-            container.style.gridTemplateRows = "auto";
-            img_radius = "0 " + rad + " " + rad + " 0";
-            text_radius = rad + " 0 0 " + rad;
-        } else if (text_pos == "right") {
-            container.style.gridTemplateColumns = "auto " + text_space + "px";
-            container.style.gridTemplateRows = "auto";
-            img_radius = rad + " 0 0 " + rad;
-            text_radius = "0 " + rad + " " + rad + " 0";
-        } else {
-            container.style.gridTemplateColumns = "auto";
-            container.style.gridTemplateRows = "auto " + text_space + "px";
-            img_radius = rad + " " + rad + " 0 0";
-            text_radius = "0 0 " + rad + " " + rad;
-        }
-        // create img
-        var imgBlock = createImg(post.img, post.title, img_radius);
-        // create text
-        var textBlock = createText(post, text_pos, text_radius, font_sizes);
+<hr class="container is-max-desktop">
 
-        if (text_pos == "left") {
-            container.appendChild(textBlock);
-            container.appendChild(imgBlock);
-        } else {
-            container.appendChild(imgBlock);
-            container.appendChild(textBlock);
-        }
-        
-        return container;
-    }
+<!-- 显示最新的blog文章 -->
+<div class="container is-max-desktop my-6">
+    <div class="title is-2">最新</div>
+    {% for post in site.posts %}
+        {% unless post.featured %}
+            {% include post_block.html post=post %}
+        {% endunless %}
+    {% endfor %}
+</div>
 
-    function normalizePosts(posts) {
-        for (var i = 0; i < posts.length; i++) {
-            var post = posts[i];
-            post.tags = post.tags.join(" ");
-            if (post.img == null) {
-                post.img = "default.jpg";
-            }
-        }
-        return posts;
-    }
-
-    posts = {{ site.posts | jsonify }};
-    posts = normalizePosts(posts);
-
-    r = 7; // border radius
-
-    test_block = createBlock("test", 300, 420, 180, "center", posts[0], [20,14], r);
-    document.getElementById("index-latest").after(test_block);
-    test_block = createBlock("test", 300, 420, 180, "center", posts[1], [20,14], r);
-    document.getElementById("index-latest").after(test_block);
-    test_block = createBlock("test", 300, 420, 180, "center", posts[2], [20,14], r);
-    document.getElementById("index-latest").after(test_block);
-
-    test_block = createBlock("test", 465, 420, 160, "center", posts[1], [22,14], r);
-    document.getElementById("index-latest").after(test_block);
-    test_block = createBlock("test", 465, 420, 160, "center", posts[2], [22,14], r);
-    document.getElementById("index-latest").after(test_block);
-
-    test_block = createBlock("test", 300, 420, 180, "center", posts[2], [20,14], r);
-    document.getElementById("index-featured").after(test_block);
-    test_block = createBlock("test", 300, 420, 180, "center", posts[0], [20,14], r);
-    document.getElementById("index-featured").after(test_block);
-    test_block = createBlock("test", 300, 420, 180, "center", posts[1], [20,14], r);
-    document.getElementById("index-featured").after(test_block);
-
-    test_block = createBlock("test", 465, 420, 160, "center", posts[1], [22,14], r);
-    document.getElementById("index-featured").after(test_block);
-    test_block = createBlock("test", 465, 420, 160, "center", posts[0], [22,14], r);
-    document.getElementById("index-featured").after(test_block);
-
-    test_block = createBlock("test", 960, 500, 140, "center", posts[0], [28,14], r);
-    document.getElementById("index-featured").after(test_block);
-
-</script>
+<!-- 查看全部按钮 -->
+<div class="block my-6">
+    <div class="level">
+        <div class="level-item">
+            <a class="button is-rounded is-medium is-dark has-text-text is-outlined" href="blog.html">全部</a>
+        </div>
+    </div>
+</div>
