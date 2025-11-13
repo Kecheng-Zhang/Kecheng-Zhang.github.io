@@ -20,9 +20,12 @@ layout: base
                 <hr>
             {% endif %}
             {% assign last_year = current_year %}
-            <div class="title is-2 my-6">
-                {{ current_year }}
-            </div>
+            <span class="icon-text">
+                <div class="title is-2">
+                    <i class="fa-solid fa-angle-right has-text-link-70"></i>
+                    {{ current_year }}
+                </div>
+            </span>
         {% endif %}
         {% include post_block.html post=post %}
     {% endfor %}
