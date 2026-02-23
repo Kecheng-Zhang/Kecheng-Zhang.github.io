@@ -1,11 +1,8 @@
 <!-- 头部导航栏 -->
 
-<nav class="navbar is-fixed-top has-background-white shadow-sm" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top has-background-white" role="navigation" aria-label="main navigation">
     <div class="container is-max-desktop">
         <div class="navbar-brand">
-            <a class="navbar-item has-text-dark font-bold" href="/">
-                Kecheng Zhang
-            </a>
             <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -18,7 +15,7 @@
     <div class="navbar-menu">
         <div class="navbar-start">
             {% for item in site.data.nav %}
-                <a class="navbar-item is-tab has-text-gray-700 hover:text-blue-600 transition-colors duration-200" href="{{ item.url }}">
+                <a class="navbar-item is-tab" href="{{ item.url }}">
                     {{ item.title }}
                 </a>
             {% endfor %}

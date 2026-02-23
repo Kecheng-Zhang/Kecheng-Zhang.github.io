@@ -1,25 +1,25 @@
 <!-- 显示在index页面的blog块 -->
 
-<div class="blog-card p-6 my-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-white">
+<div class="block my-6">
 
     <div class="title is-5 my-2">
-        <a class="has-text-dark hover:text-blue-600 transition-colors duration-200" href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
+        <a class="has-text-text" href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
     </div>
 
-    <div class="level my-3">
+    <div class="level my-2">
         <div class="level-left">
             <div class="level-item">
                 <span class="icon-text">
-                    <span class="icon has-text-gray-500"><i class="fas fa-calendar"></i></span>
-                    <span class="has-text-gray-500">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+                    <span class="icon has-text-grey"><i class="fas fa-calendar"></i></span>
+                    <span class="has-text-grey">{{ include.post.date | date: "%Y-%m-%d" }}</span>
                 </span>
             </div>
             <div class="level-item">
                 <span class="icon-text">
-                    <span class="icon has-text-gray-500"><i class="fas fa-tag"></i></span>
+                    <span class="icon has-text-grey"><i class="fas fa-tag"></i></span>
                     <span>
                         {% for tag in include.post.tags %}
-                            <a class="has-text-gray-500 hover:text-blue-600 transition-colors duration-200 mr-2" href="/tags/{{ tag | slugify }}">#{{ tag }}</a>
+                            <a class="has-text-grey" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
                         {% endfor %}
                     </span>
                 </span>
@@ -27,12 +27,12 @@
         </div>
     </div>
 
-    <div class="block my-3 has-text-gray-700 line-clamp-3">{{ include.post.excerpt }}</div>
+    <div class="block my-2 has-text-grey">{{ include.post.excerpt }}</div>
 
     <span class="icon-text my-3">
-        <a class="has-text-blue-600 has-text-weight-bold hover:text-blue-800 transition-colors duration-200" href="{{ include.post.url | relative_url }}">
+        <a class="has-text-link-70 has-text-weight-bold" href="{{ include.post.url | relative_url }}">
             阅读全文
-            <i class="fas fa-angle-right ml-1"></i>
+            <i class="fas fa-angle-right"></i>
         </a>
     </span>
 
