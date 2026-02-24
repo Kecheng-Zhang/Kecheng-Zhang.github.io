@@ -3,6 +3,9 @@
 <nav class="navbar is-fixed-top has-background-white" role="navigation" aria-label="main navigation">
     <div class="container is-max-desktop">
         <div class="navbar-brand">
+            <div class="navbar-item is-family-code has-text-weight-bold">
+                <a class="has-text-text" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            </div>
             <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -10,15 +13,15 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-    </div>
 
-    <div class="navbar-menu">
-        <div class="navbar-start">
-            {% for item in site.data.nav %}
-                <a class="navbar-item is-tab" href="{{ item.url }}">
-                    {{ item.title }}
-                </a>
-            {% endfor %}
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                {% for item in site.data.nav %}
+                    <a class="navbar-item is-tab" href="{{ item.url }}">
+                        {{ item.title }}
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </nav>
