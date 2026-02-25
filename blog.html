@@ -20,12 +20,16 @@ layout: base
                 <hr class="container is-max-desktop my-6">
             {% endif %}
             {% assign last_year = current_year %}
-            <span class="icon-text">
-                <div class="title is-2">
-                    {{ current_year }}
-                    <i class="fa-solid fa-bookmark has-text-link-70 is-size-3"></i>
+            <div class="columns">
+                <div class="column">
+                    <div class="title is-2">{{ current_year }}</div>
                 </div>
-            </span>
+                <div class="column has-text-right">
+                    <span class="icon">
+                        <i class="fa-solid fa-angle-down has-text-link-70 is-size-2"></i> 
+                    </span>
+                </div>
+            </div>
         {% endif %}
         {% include post_block.html post=post %}
     {% endfor %}
