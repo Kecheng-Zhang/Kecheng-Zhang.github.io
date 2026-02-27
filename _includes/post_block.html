@@ -1,6 +1,6 @@
 <!-- 显示在index页面的blog块 -->
 
-<div class="block my-6">
+<div class="block my-6" data-tags="{{ include.post.tags | join: ' ' }}">
 
     <div class="title is-5 my-2">
         <a class="has-text-text" href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
@@ -19,7 +19,7 @@
                     <span class="icon has-text-grey"><i class="fas fa-tag"></i></span>
                     <span>
                         {% for tag in include.post.tags %}
-                            <a class="has-text-grey" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+                            <a class="has-text-grey" href="/tag/{{ tag | slugify }}">{{ tag }}</a>
                         {% endfor %}
                     </span>
                 </span>

@@ -1,0 +1,38 @@
+---
+layout: base
+---
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const path = window.location.pathname;
+        tag = path.split('/').pop();
+        tag = tag.charAt(0).toUpperCase() + tag.slice(1);
+        document.getElementById('tag-title').textContent = 'Tag - ' + tag;
+        document.getElementById('tag-desc').textContent = '这里展示了包含标签 ' + tag + ' 的文章。';
+
+        // 隐藏不包含当前标签的文章
+        const otherPosts = document.querySelectorAll('[data-tags]:not([data-tags*="' + tag + '"])');
+        otherPosts.forEach(post => {
+            post.style.display = 'none';
+        });
+    });
+</script>
+
+<div class="container is-max-tablet my-6">
+    <div class="title is-1" id="tag-title">
+        Tag: Unknown
+    </div>
+
+    <div class="block" id="tag-desc">
+        ERROR
+    </div>
+    
+</div>
+
+<hr class="container is-max-tablet">
+
+<!-- 显示置顶的blog文章 -->
+<div class="container is-max-tablet my-6">
+    {% for post in site.posts %}
+        {% include post_block.html post=post %}
+    {% endfor %}
+</div>
