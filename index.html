@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<div class="container is-max-desktop my-6">
+<div class="container is-max-tablet my-6">
     <div class="title is-1">
         The Thinking Stack
     </div>
@@ -12,17 +12,17 @@ layout: base
     </div>
 
     <div class="icon-text">
-        <a href="https://github.com/Kecheng-Zhang">
+        <a href="https://github.com/kechengzhang28">
             <i class="fa-brands fa-github fa-2x has-text-text"></i>
         </a>
     </div>
     
 </div>
 
-<hr class="container is-max-desktop">
+<hr class="container is-max-tablet">
 
 <!-- 显示置顶的blog文章 -->
-<div class="container is-max-desktop my-6">
+<div class="container is-max-tablet my-6">
     <div class="title is-2">置顶</div>
     {% for post in site.posts %}
         {% if post.featured %}
@@ -31,10 +31,10 @@ layout: base
     {% endfor %}
 </div>
 
-<hr class="container is-max-desktop">
+<hr class="container is-max-tablet">
 
 <!-- 显示最新的blog文章 -->
-<div class="container is-max-desktop my-6">
+<div class="container is-max-tablet my-6">
     <div class="title is-2">最新</div>
     {% for post in site.posts %}
         {% unless post.featured %}
