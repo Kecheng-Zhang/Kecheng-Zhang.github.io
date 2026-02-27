@@ -17,7 +17,7 @@ layout: base
 
 <!-- 显示置顶的blog文章 -->
 <div class="container is-max-tablet my-6">
-    <div class="title is-2">置顶</div>
+    <div class="title is-3">置顶</div>
     {% for post in site.posts %}
         {% if post.featured %}
             {% include post_block.html post=post %}
@@ -29,7 +29,7 @@ layout: base
 
 <!-- 显示最新的blog文章 -->
 <div class="container is-max-tablet my-6">
-    <div class="title is-2">最新</div>
+    <div class="title is-3">最新</div>
     {% for post in site.posts %}
         {% unless post.featured %}
             {% include post_block.html post=post %}
