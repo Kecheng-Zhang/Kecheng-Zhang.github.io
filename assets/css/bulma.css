@@ -3066,7 +3066,6 @@ fieldset {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  background-color: var(--bulma-pre-background);
   color: var(--bulma-pre);
   font-size: var(--bulma-pre-font-size);
   overflow-x: auto;

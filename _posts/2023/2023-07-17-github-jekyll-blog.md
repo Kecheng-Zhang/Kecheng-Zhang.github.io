@@ -39,31 +39,29 @@ tags:
 
 首先，制作tag集合。放入一个id为“tags”的一个块，然后通过{% raw %}{% for item in site.tags %}{% endraw %}来遍历站内的所有tags。这样，一个tag集合就做好了，具体代码如下：
 
-```
+{% highlight liquid %}
 <div id="tags">
-    {% raw %}{% for item in site.tags %}{% endraw %}
-        <div class="tag-block" id="{{ item[0] }}">
-            {% raw %}{{ item[0] }}{% endraw %}
-        </div>
-    {% raw %}{% endfor %}{% endraw %}
+    {% raw %}{% for item in site.tags %}{% endraw %}
+        <div class="tag-block" id="{{ item[0] }}">
+            {% raw %}{{ item[0] }}{% endraw %}
+        </div>
+    {% raw %}{% endfor %}{% endraw %}
 </div>
-```
+{% endhighlight %}
 
 接下来，就可以创建一个JS脚本，使用document.getElementById获得包含所有tag的列表了。这样子，就可以通过通过id来控制相应块的显示和隐藏了，代码如下：
-```
+{% highlight javascript %}
 function show(tag) {
-
-    hidePosts("posts-all");
-    show_all.style.display = "unset";
-    
-    for (i=0; i<tags.length; i++) {
-        if (tags[i].id != tag) {
-            hidePosts("posts-".concat(tags[i].id));
-        } else {
-            showPosts("posts-".concat(tags[i].id));
-        }
-    }
+    hidePosts("posts-all");
+    show_all.style.display = "unset";
+    for (i=0; i<tags.length; i++) {
+        if (tags[i].id != tag) {
+            hidePosts("posts-".concat(tags[i].id));
+        } else {
+            showPosts("posts-".concat(tags[i].id));
+        }
+    }   
 }
-```
+{% endhighlight %}
 这样子，根据tag选择文章的功能就实现啦。最后，不要忘记设置一个显示全部的功能，否则就只能通过刷新来浏览全部内容了。
 
