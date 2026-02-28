@@ -24,4 +24,7 @@
     transform: translateX(5px);
 }
 
-/* */
+/* 404 页面 */
+.not-found{
+    font-size: 10rem;
+}
