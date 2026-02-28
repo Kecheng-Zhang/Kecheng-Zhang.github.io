@@ -8,6 +8,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/assets/font/JetBrainsMono-ExtraBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /* "阅读全文" hover 箭头动画 */
 .icon-text a .fa-angle-right {
     transition: transform 0.1s ease;

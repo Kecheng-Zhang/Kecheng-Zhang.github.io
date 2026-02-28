@@ -3,21 +3,29 @@ layout: base
 ---
 
 <div class="container is-max-tablet my-6">
-    <div class="title is-1">
-        The Thinking Stack
+    <div class="columns">
+        <div class="column">
+            <div class="title is-1">思维栈</div>
+            <div class="block">欢迎来到我的个人网站！</div>
+        </div>
+        <div class="column">
+            <div class="title is-3 is-family-code has-text-link-70 has-text-right">Think Stack</div>
+        </div>
     </div>
-
-    <div class="block">
-        欢迎来到我的个人网站！
-    </div>
-    
 </div>
 
 <hr class="container is-max-tablet">
 
 <!-- 显示置顶的blog文章 -->
 <div class="container is-max-tablet my-6">
-    <div class="title is-3">置顶</div>
+    <div class="columns">
+        <div class="column"><div class="title is-3 ">置顶</div></div>
+        <div class="column has-text-right">
+            <span class="icon">
+                <i class="fa-solid fa-angle-down has-text-link-70 is-size-3"></i> 
+            </span>
+        </div>
+    </div>
     {% for post in site.posts %}
         {% if post.featured %}
             {% include post_block.html post=post %}
@@ -29,7 +37,14 @@ layout: base
 
 <!-- 显示最新的blog文章 -->
 <div class="container is-max-tablet my-6">
-    <div class="title is-3">最新</div>
+    <div class="columns">
+        <div class="column"><div class="title is-3 ">最新</div></div>
+        <div class="column has-text-right">
+            <span class="icon">
+                <i class="fa-solid fa-angle-down has-text-link-70 is-size-3"></i> 
+            </span>
+        </div>
+    </div>
     {% for post in site.posts %}
         {% unless post.featured %}
             {% include post_block.html post=post %}
