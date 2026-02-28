@@ -1,17 +1,14 @@
 ---
-layout: base
+layout: plain
 ---
-
-<div class="container is-max-tablet my-6">
-    <div class="title is-1">
-        404
+{% include header.html %}
+<div class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="not-found">404</div>
+            <div class="block">Page Not Found</div>
+        </div>
     </div>
-
-    <div class="block">
-        Page Not Found
-    </div>
-
-    <hr>
-    
-    <div class="hero is-fullheight"></div>
 </div>
+
+{% include footer.html %}
