@@ -1,12 +1,22 @@
-<!-- 头部导航栏 -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.getElementById(burger.dataset.target);
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+        });
+    });
+</script>
 
+<!-- 头部导航栏 -->
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container is-max-desktop">
         <div class="navbar-brand">
             <div class="navbar-item is-family-code has-text-weight-bold">
                 <a class="has-text-text" href="{{ site.baseurl }}/">{{ site.title }}</a>
             </div>
-            <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+            <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="nav-menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -14,7 +24,7 @@
             </a>
         </div>
 
-        <div class="navbar-menu">
+        <div id="nav-menu" class="navbar-menu">
             <div class="navbar-end">
                 {% for item in site.data.nav %}
                     <a class="navbar-item is-tab" href="{{ item.url }}">
