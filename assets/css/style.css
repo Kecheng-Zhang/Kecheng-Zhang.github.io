@@ -28,3 +28,12 @@
 .not-found{
     font-size: 10rem;
 }
+
+/* Music card title hover */
+.music-card-title {
+    transition: color 0.15s ease;
+}
+
+.music-card-title:hover {
+    color: #3273dc;
+}
