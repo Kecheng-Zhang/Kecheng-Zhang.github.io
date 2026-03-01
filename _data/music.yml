@@ -1,19 +1,31 @@
 - title: INVISIBLE
   release: 2021
   year: 2025
-  author: Duran Duran
+  author:
+    - Duran Duran
   img: /assets/img/music/DD-Invisible.jpg
   default-link: https://music.163.com/#/song?id=1843726556
-  kugou: https://www.kugou.com/mixsong/5p1cbu36.html?fromsearch=INVISIBLE
-  applemusic: https://music.apple.com/us/album/invisible/1567863579?i=1567863580
-  bilibili: https://www.bilibili.com/video/BV119Yqz2Ejd?vd_source=f4d5561279916bfa620a32d590265535
-  spotify: https://open.spotify.com/track/51EpFns3CG9taCMQz6XDom
+  links:
+    - name: Apple Music
+      link: https://music.apple.com/us/album/invisible/1567863579?i=1567863580
+    - name: Spotify
+      link: https://open.spotify.com/track/51EpFns3CG9taCMQz6XDom
+    - name: Kugou
+      link: https://www.kugou.com/mixsong/5p1cbu36.html?fromsearch=INVISIBLE
+    - name: Bilibili
+      link: https://www.bilibili.com/video/BV119Yqz2Ejd?vd_source=f4d5561279916bfa620a32d590265535
+    
 
 - title: Bones
   release: 2017
   year: 2025
-  author: Low Roar / Jófriður
+  author:
+    - Low Roar
+    - Jófriður
   img: /assets/img/music/bones.jpg
   default-link: https://music.163.com/#/song?id=472045267
-  applemusic: https://music.apple.com/us/song/bones-feat-jofridur/1496871744
-  spotify: https://open.spotify.com/track/6lt8Z886tMHpNqzOFWX8Yn
+  links:
+    - name: Apple Music
+      link: https://music.apple.com/us/song/bones-feat-jofridur/1496871744
+    - name: Spotify
+      link: https://open.spotify.com/track/6lt8Z886tMHpNqzOFWX8Yn

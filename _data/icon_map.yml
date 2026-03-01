@@ -1,0 +1,12 @@
+- name: Apple Music
+  icon: fa-brands fa-itunes-note
+  color: has-text-danger-50
+- name: Spotify
+  icon: fa-brands fa-spotify
+  color: has-text-success
+- name: Kugou
+  icon: fa-solid fa-k
+  color: has-text-link
+- name: Bilibili
+  icon: fa-brands fa-bilibili
+  color: has-text-danger-80
