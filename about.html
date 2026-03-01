@@ -55,14 +55,12 @@ layout: base
     <div class="title is-3">年度音乐</div>
     <div class="block">每一年都可以用一些音乐来总结。</div>
 
-    <div class="fixed-grid has-3-cols-tablet">
-        <div class="grid">
-            {% for music in site.data.music reversed %}
-            <div class="cell">
-                {% include music_card.html music=music %}
-            </div>
-            {% endfor %}
+    <div class="grid is-col-min-8">
+        {% for music in site.data.music reversed %}
+        <div class="cell">
+            {% include music_card.html music=music %}
         </div>
+        {% endfor %}
     </div>
     
 </div>
