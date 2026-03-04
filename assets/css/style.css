@@ -1,5 +1,6 @@
 @import "bulma.css";
 @import "syntax.css";
+@import "animation.css";
 
 @font-face {
     font-family: 'JetBrains Mono';
