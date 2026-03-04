@@ -11,8 +11,8 @@
 .animation-typing {
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px  solid currentColor;
-    animation: typing 1s steps(30);
+    border-right: 3px  solid transparent;
+    animation: typing 1s steps(30), blink 0.5s step-end 2;
 }
 
 @keyframes typing {
