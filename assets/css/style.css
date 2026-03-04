@@ -16,15 +16,6 @@
     font-style: normal;
 }
 
-/* "阅读全文" hover 箭头动画 */
-.icon-text a .fa-angle-right {
-    transition: transform 0.1s ease;
-}
-
-.icon-text a:hover .fa-angle-right {
-    transform: translateX(5px);
-}
-
 /* 404 页面 */
 .not-found{
     font-size: 10rem;
