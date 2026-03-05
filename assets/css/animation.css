@@ -1,3 +1,7 @@
+:root {
+    --hover-blue: #41b0f4;
+}
+
 /* "阅读全文" hover 箭头动画 */
 .icon-text a .fa-angle-right {
     transition: transform 0.2s ease;
@@ -13,7 +17,7 @@
 }
 
 .hover-blue:hover {
-    color: #41b0f4;
+    color: var(--hover-blue);
 }
 
 /* Typing animation */
@@ -32,4 +36,54 @@
 @keyframes blink {
     from, to { border-color: transparent; }
     50% { border-color: currentColor }
+}
+
+/* Index Button animation */
+.index-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2.5rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    overflow: hidden;
+    position: relative;
+}
+
+.index-button-icon {
+    transition-duration: 0.2s;
+}
+
+.index-button:hover {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 2.5rem;
+    transition-duration: 0.2s;
+    align-items: center;
+    color: var(--hover-blue);
+    border: 2px solid var(--hover-blue);
+}
+
+.index-button:hover .index-button-icon {
+    width: 20px;
+    transition-duration: 0.2s;
+    transform: scale(0);
+}
+
+.index-button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "全部博客";
+    font-size: 0px;
+}
+
+.index-button:hover::before {
+    font-size: 1rem;
+    opacity: 1;
+    bottom: unset;
+    transition-duration: 0.2s;
 }
