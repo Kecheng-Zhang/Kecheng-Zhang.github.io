@@ -1,6 +1,6 @@
 /* "阅读全文" hover 箭头动画 */
 .icon-text a .fa-angle-right {
-    transition: transform 0.1s ease;
+    transition: transform 0.2s ease;
 }
 
 .icon-text a:hover .fa-angle-right {
@@ -8,12 +8,12 @@
 }
 
 /* Music card title hover */
-.music-card-title {
-    transition: color 0.15s ease;
+.hover-blue {
+    transition: color 0.2s ease;
 }
 
-.music-card-title:hover {
-    color: #3273dc;
+.hover-blue:hover {
+    color: #41b0f4;
 }
 
 /* Typing animation */
