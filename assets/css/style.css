@@ -16,6 +16,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'LXGWWenKai';
+    src: url('/assets/font/LXGWWenKaiLite-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SmileySans';
+    src: url('/assets/font/SmileySans-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 404 页面 */
 .not-found{
     font-size: 10rem;
