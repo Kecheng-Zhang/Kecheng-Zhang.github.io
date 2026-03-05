@@ -11,7 +11,7 @@
     transform: translateX(5px);
 }
 
-/* Music card title hover */
+/* 全局按钮 hover 颜色 */
 .hover-blue {
     transition: color 0.2s ease;
 }

@@ -17,7 +17,9 @@
         <span class="icon has-text-grey"><i class="fas fa-tag"></i></span>
         <span>
             {% for tag in include.post.tags %}
-                <a class="has-text-grey" href="/tag/{{ tag | slugify }}">{{ tag }}</a>
+                <a class="has-text-grey" href="/tag/{{ tag | slugify }}">
+                    <span class="hover-blue">{{ tag }}</span>
+                </a>
             {% endfor %}
         </span>
     </span>
