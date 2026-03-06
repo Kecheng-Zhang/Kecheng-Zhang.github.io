@@ -5,10 +5,10 @@ author: Kecheng Zhang
 img:
 lang: zh
 featured: false
-excerpt: 这是我在使用Github Pages和Jekyll搭建个人博客过程中的一些经验和体会。
 tags:
   - Github
   - Jekyll
+excerpt: 这是我在使用Github Pages和Jekyll搭建个人博客过程中的一些经验和体会。
 ---
 
 # 前言

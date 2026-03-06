@@ -2,11 +2,11 @@
 layout: post
 title: 制作曲奇
 author: Kecheng Zhang
-img: 
-tags:
-  - Cooking
+img:
 lang: zh
 featured: false
+tags:
+  - Cooking
 excerpt: 自己制作饼干的经历
 ---
 # 配方
