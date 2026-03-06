@@ -3990,7 +3990,7 @@ a.box:active {
   line-height: var(--bulma-content-heading-line-height);
 }
 .content h1 {
-  font-size: 2em;
+  font-size: 2.25em;
   margin-bottom: 0.5em;
 }
 .content h1:not(:first-child) {
