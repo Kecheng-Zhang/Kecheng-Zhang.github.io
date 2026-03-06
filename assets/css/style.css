@@ -24,10 +24,22 @@
 }
 
 @font-face {
-    font-family: 'SmileySans';
-    src: url('/assets/font/SmileySans-Oblique.ttf') format('truetype');
+    font-family: 'LXGWNeoHei';
+    src: url('/assets/font/NeoXiHeiCode-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+.is-font-kai {
+    font-family: 'LXGWWenKai', sans-serif;
+}
+
+.is-font-hei {
+    font-family: 'LXGWNeoHei', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "LXGWNeoHei", sans-serif;
 }
 
 /* 404 页面 */
