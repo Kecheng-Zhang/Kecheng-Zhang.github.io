@@ -21067,7 +21067,7 @@ has-background-danger.is-hoverable:active {
 }
 
 .is-family-code {
-  font-family: "JetBrains Mono", "LXGWWenKaiMono", monospace !important;
+  font-family: "JetBrains Mono", "LXGWNeoHei", "LXGWWenKaiMono", monospace !important;
 }
 
 .is-display-none,

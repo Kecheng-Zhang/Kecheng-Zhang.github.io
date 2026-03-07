@@ -1,13 +1,16 @@
 ---
 layout: base
+title: 标签分类
+subtitle: Tag - [ ]
+description: 这里展示了包含标签 [ ] 的文章。
 ---
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const path = window.location.pathname;
         tag = path.split('/').pop();
         tag = decodeURIComponent(tag);
-        document.getElementById('tag-title').textContent = 'Tag - ' + tag;
-        document.getElementById('tag-desc').textContent = '这里展示了包含标签 ' + tag + ' 的文章。';
+        document.getElementById('page-subtitle').textContent = 'Tag - ' + tag;
+        document.getElementById('page-desc').textContent = '这里展示了包含标签 ' + tag + ' 的文章。';
 
         // 隐藏不包含当前标签的文章
         const otherPosts = document.querySelectorAll('[data-tags]:not([data-tags*="' + tag + '"])');
@@ -17,11 +20,7 @@ layout: base
     });
 </script>
 
-<div class="container is-max-tablet my-6">
-    <div class="title is-1">标签分类</div>
-    <div class="subtitle is-3 is-family-code has-text-link-70" id="tag-title">Tag</div>
-    <div class="block" id="tag-desc"></div>
-</div>
+{% include title_section.html title=page.title subtitle=page.subtitle description=page.description %}
 
 <hr class="container is-max-tablet">
 
