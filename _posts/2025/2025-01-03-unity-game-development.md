@@ -4,7 +4,7 @@ title: 游戏制作全流程：团队Unity开发实录
 author: Kecheng Zhang
 img: /assets/img/post-img/unity.jpg
 lang: zh
-featured: false
+featured: true
 tags: Unity
 excerpt: 记录了大学游戏设计课程中团队开发Unity俯视角第三人称射击游戏的完整经历，从原型开发到团队组建，再到核心代码架构设计与实现。介绍了原型设计模式的应用，以及工厂类和对象池等性能优化方案，总结了技术实践和团队协作中的经验教训。
 ---
