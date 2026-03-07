@@ -1,12 +1,11 @@
 ---
 layout: base
+title: 博客文章
+subtitle: Blog Posts
+description: 所有博客文章。
 ---
 
-<div class="container is-max-tablet my-6">
-    <div class="title is-1">博客文章</div>
-    <div class="subtitle is-3 is-family-code has-text-link-70">Blog Posts</div>
-    <div class="block">所有博客文章。</div>
-</div>
+{% include title_section.html title=page.title subtitle=page.subtitle description=page.description %}
 
 <hr class="container is-max-tablet">
 

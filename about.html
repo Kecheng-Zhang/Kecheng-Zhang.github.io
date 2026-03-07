@@ -1,13 +1,11 @@
 ---
 layout: base
+title: 关于我
+subtitle: About Me
+description: 关于我的一些事情。
 ---
 
-<div class="container is-max-tablet my-6">
-
-    <div class="title is-1">关于我</div>
-    <div class="subtitle is-3 is-family-code has-text-link-70">About Me</div>
-    <div class="block">关于我的一些事情。</div>
-</div>
+{% include title_section.html title=page.title subtitle=page.subtitle description=page.description %}
 
 <hr class="container is-max-tablet">
 
