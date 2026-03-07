@@ -6,7 +6,9 @@ layout: base
     <div class="container is-max-tablet">
         <div class="title is-1">{{page.title}}</div>
         {% if page.img %}
-        <img src="{{page.img}}" alt="{{page.title}}">
+        <div class="post-img">
+            <img src="{{page.img}}" alt="{{page.title}}">
+        </div>
         {% endif %}
         
         <div class="level">

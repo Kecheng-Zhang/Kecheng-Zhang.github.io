@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 1rem;
 }
 
+/* 文章图片 */
+.post-img img {
+    border-radius: 0.75rem;
+}
+
 /* 404 页面 */
 .not-found{
     font-size: 10rem;
