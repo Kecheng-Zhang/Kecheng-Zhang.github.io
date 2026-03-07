@@ -2,34 +2,31 @@
 layout: base
 ---
 
-<div class="section">
-    <div class="container is-max-tablet">
-        <div class="title is-1">{{page.title}}</div>
-        {% if page.img %}
-        <div class="post-img">
-            <img src="{{page.img}}" alt="{{page.title}}">
-        </div>
-        {% endif %}
-        
-        <div class="level">
-            <div class="level-left">
-                <div class="subtitle is-6">{{page.date | date: "%Y %b %d"}} - {{page.author}}</div>
-            </div>
-            <div class="level-right">
-                {% include tags.html tags=page.tags %}
-            </div>
-        </div>
 
-        <div>{{page.excerpt}}</div>
+<div class="container is-max-tablet my-6">
+    <div class="title is-1">{{page.title}}</div>
+    {% if page.img %}
+    <div class="post-img">
+        <img src="{{page.img}}" alt="{{page.title}}">
     </div>
+    {% endif %}
+    
+    <div class="level">
+        <div class="level-left">
+            <div class="subtitle is-6">{{page.date | date: "%Y %b %d"}} - {{page.author}}</div>
+        </div>
+        <div class="level-right">
+            {% include tags.html tags=page.tags %}
+        </div>
+    </div>
+
+    <div>{{page.excerpt}}</div>
 </div>
 
 <hr class="container is-max-tablet">
 
-<div class="section">
-    <div class="container is-max-tablet">
-        <div class="content">
-            {{content}}
-        </div>
+<div class="container is-max-tablet my-6">
+    <div class="content">
+        {{content}}
     </div>
 </div>
