@@ -16,16 +16,7 @@
                 <span class="icon has-text-grey"><i class="fas fa-calendar"></i></span>
                 <span class="has-text-grey">{{ include.post.date | date: "%Y-%m-%d" }}</span>
             </span>
-            <span class="icon-text">
-                <span class="icon has-text-grey"><i class="fas fa-tag"></i></span>
-                <span>
-                    {% for tag in include.post.tags %}
-                        <a class="has-text-grey" href="/tag/{{ tag | slugify }}">
-                            <span class="hover-blue">{{ tag }}</span>
-                        </a>
-                    {% endfor %}
-                </span>
-            </span>
+            {% include tags.html tags=include.post.tags %}
         </div>
         <div class="level-right">
             <span class="icon-text my-3">
