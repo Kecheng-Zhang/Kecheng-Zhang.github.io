@@ -1,0 +1,35 @@
+<aside class="toc">
+    <p class="toc-title is-font-hei">目录</p>
+    <ul id="side-toc">
+    </ul>
+</aside>
+
+<script>
+    // 获取所有标题
+    const headers = document.querySelectorAll('.content h1, .content h2, .content h3');
+    var sideToc = document.getElementById('side-toc');
+    // 遍历所有标题，创建目录项
+    headers.forEach(header => {
+        console.log(header.nodeName);
+        var tocItem = document.createElement('li');
+        tocItem.classList.add('toc-item');
+        tocItem.classList.add('my-3');
+        switch (header.nodeName) {
+            case 'H1':
+                tocItem.classList.add('mx-0');
+                break;
+            case 'H2':
+                tocItem.classList.add('mx-2');
+                break;
+            case 'H3':
+                tocItem.classList.add('mx-4');
+                break;
+            default:
+                break;
+        }
+        tocItem.innerHTML = '<a href="#' + header.id + '" class="has-text-text">' +
+            '<span class="hover-blue">' + header.innerHTML + '</span>'
+            + '</a>';
+        sideToc.appendChild(tocItem);
+    });
+</script>
