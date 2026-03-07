@@ -35,6 +35,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'LXGWWenKaiMono';
+    src: url('/assets/font/LXGWWenKaiMono-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .is-font-kai {
     font-family: 'LXGWWenKai', sans-serif;
 }
