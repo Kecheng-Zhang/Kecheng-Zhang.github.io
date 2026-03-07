@@ -6,7 +6,7 @@ img:
 lang: zh
 featured: false
 tags:
-  - Cooking
+  - 生活
 excerpt: 自己制作饼干的经历
 ---
 # 配方

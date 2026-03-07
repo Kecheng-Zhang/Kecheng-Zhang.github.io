@@ -6,6 +6,8 @@ img:
 lang: zh
 featured: false
 tags:
+  - 网页
+  - 开发
   - Github
   - Jekyll
 excerpt: 这是我在使用Github Pages和Jekyll搭建个人博客过程中的一些经验和体会。
