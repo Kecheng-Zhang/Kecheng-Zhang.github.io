@@ -57,6 +57,21 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0.75rem;
 }
 
+p img {
+    border-radius: 0.75rem !important;
+}
+
+p:has(+ div.caption) {
+    margin-bottom: 0 !important;
+}
+
+.caption {
+    font-size: 0.8rem;
+    margin-bottom: 1em;
+    text-align: center;
+    color: gray;
+}
+
 /* 404 页面 */
 .not-found{
     font-size: 10rem;
