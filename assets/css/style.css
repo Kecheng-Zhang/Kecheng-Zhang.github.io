@@ -93,6 +93,11 @@ p:has(+ div.caption) {
     cursor: pointer;
 }
 
+.toc-back-to-top {
+    position: sticky;
+    top: 49rem;
+}
+
 .toc-item {
     font-size: 0.75em;
 }

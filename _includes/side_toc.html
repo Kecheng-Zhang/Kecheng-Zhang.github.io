@@ -1,15 +1,33 @@
 <aside class="toc">
-    <div class="toc-title icon" id="toc-title-icon">
-        <span class="hover-blue"><i class="fa-solid fa-bars"></i></span>
+    <div class="block my-0">
+        <div class="toc-title icon" id="toc-title-icon">
+            <span class="hover-blue"><i class="fa-solid fa-bars"></i></span>
+        </div>
     </div>
+    
     <ul id="side-toc" class="mx-3 is-hidden px-3" style="border-left: 1px solid #e5e5e5;">
     </ul>
+</aside>
+
+<aside class="toc-back-to-top">
+    <div class="block my-0">
+        <div class="icon" id="toc-back-to-top-icon" style="cursor: pointer;">
+            <span class="hover-blue"><i class="fa-solid fa-caret-up fa-lg"></i></span>
+        </div>
+    </div>
 </aside>
 
 <script>
     // 目录标题点击事件
     document.getElementById('toc-title-icon').addEventListener('click', function() {
         document.getElementById('side-toc').classList.toggle('is-hidden');
+    });
+    // 目录返回顶部点击事件
+    document.getElementById('toc-back-to-top-icon').addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
     // 获取所有标题
