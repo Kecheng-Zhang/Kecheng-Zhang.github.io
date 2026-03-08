@@ -1,28 +1,35 @@
 <aside class="toc">
-    <p class="toc-title is-font-hei">目录</p>
-    <ul id="side-toc">
+    <div class="toc-title icon" id="toc-title-icon">
+        <span class="hover-blue"><i class="fa-solid fa-bars"></i></span>
+    </div>
+    <ul id="side-toc" class="mx-3 is-hidden px-3" style="border-left: 1px solid #e5e5e5;">
     </ul>
 </aside>
 
 <script>
+    // 目录标题点击事件
+    document.getElementById('toc-title-icon').addEventListener('click', function() {
+        document.getElementById('side-toc').classList.toggle('is-hidden');
+    });
+
     // 获取所有标题
     const headers = document.querySelectorAll('.content h1, .content h2, .content h3');
     var sideToc = document.getElementById('side-toc');
     // 遍历所有标题，创建目录项
-    headers.forEach(header => {
-        console.log(header.nodeName);
+    headers.forEach((header, index) => {
         var tocItem = document.createElement('li');
+        tocItem.id = 'side-toc-item-' + index;
         tocItem.classList.add('toc-item');
         tocItem.classList.add('my-3');
         switch (header.nodeName) {
             case 'H1':
-                tocItem.classList.add('mx-0');
+                tocItem.classList.add('px-0');
                 break;
             case 'H2':
-                tocItem.classList.add('mx-2');
+                tocItem.classList.add('px-2');
                 break;
             case 'H3':
-                tocItem.classList.add('mx-4');
+                tocItem.classList.add('px-4');
                 break;
             default:
                 break;
@@ -31,5 +38,25 @@
             '<span class="hover-blue">' + header.innerHTML + '</span>'
             + '</a>';
         sideToc.appendChild(tocItem);
+    });
+
+    // 窗口滑动到对应标题时，添加 active 类名，并在滑过其他标题时移除其他项的 active 类名
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        var previousTocItem = null;
+        headers.forEach((header, index) => {
+            const tocItem = document.getElementById('side-toc-item-' + index);
+            console.log('header.offsetTop: ', header.offsetTop);
+            console.log('scrollTop: ', scrollTop);
+            if (scrollTop >= header.offsetTop + 700) {
+                if (previousTocItem) {
+                    previousTocItem.classList.remove('toc-active');
+                }
+                tocItem.classList.add('toc-active');
+                previousTocItem = tocItem;
+            } else {
+                tocItem.classList.remove('toc-active');
+            }
+        });
     });
 </script>

@@ -84,17 +84,25 @@ p:has(+ div.caption) {
 /* 目录 */
 .toc {
     position: sticky;
-    top: 10rem;
+    top: 4rem;
 }
 
 .toc-title {
     font-size: 1em;
     font-weight: bold;
-    margin-bottom: 1rem;
+    cursor: pointer;
 }
 
 .toc-item {
     font-size: 0.75em;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.toc-active {
+    font-weight: bold;
 }
 
 /* 404 页面 */
