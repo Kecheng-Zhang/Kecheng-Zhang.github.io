@@ -10,7 +10,7 @@ tags:
   - 开发
   - Github
   - Jekyll
-excerpt: 这是我在使用Github Pages和Jekyll搭建个人博客过程中的一些经验和体会。
+excerpt: 记录了使用Github Pages + Jekyll搭建个人静态博客的过程，包括从零开始设计网页、利用_includes和_layout提高可维护性，以及使用Jekyll变量和JavaScript实现Tag筛选功能的详细教程。
 ---
 
 # 前言
