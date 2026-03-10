@@ -6,8 +6,8 @@ description: 这里展示了包含标签 [ ] 的文章。
 ---
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const path = window.location.pathname;
-        tag = path.split('/').pop();
+        const urlParam = new URLSearchParams(window.location.search);
+        tag = urlParam.get('tag');
         tag = decodeURIComponent(tag);
         document.getElementById('page-subtitle').textContent = 'Tag - ' + tag;
         document.getElementById('page-desc').textContent = '这里展示了包含标签 ' + tag + ' 的文章。';
