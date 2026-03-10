@@ -1,5 +1,5 @@
 {% if include.refs %}
-    <hr>
+    <hr class="container is-max-tablet my-6">
     <div class="title is-4">参考文献</div>
     {% assign end_index = include.refs.names.size | minus: 1 %}
     <ol class="mx-6">
@@ -10,7 +10,3 @@
         {% endfor %}
     </ol>
 {% endif %}
-
-<script>
-    console.log("{{include.refs.names.size}}");
-</script>
