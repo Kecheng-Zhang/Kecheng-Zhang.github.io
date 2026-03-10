@@ -4,46 +4,48 @@ layout: plain
 
 <body class="has-navbar-fixed-top">
     {% include header.html %}
-
-    <div class="container is-max-tablet my-6">
-        <div class="title is-1">{{page.title}}</div>
-        {% if page.img %}
-            <div class="post-img"><img src="{{page.img}}" alt="{{page.title}}"></div>
-        {% else %}
-            <div class="post-img"><img src="/assets/img/post-img/default2.jpg" alt="{{page.title}}"></div>
-        {% endif %}
-        
-        <div class="level">
-            <div class="level-left">
-                <div class="subtitle is-6">{{page.date | date: "%Y %b %d"}} - {{page.author}}</div>
+    <div class="mx-5">
+        <div class="container is-max-tablet my-6">
+            <div class="title is-1">{{page.title}}</div>
+            {% if page.img %}
+                <div class="post-img"><img src="{{page.img}}" alt="{{page.title}}"></div>
+            {% else %}
+                <div class="post-img"><img src="/assets/img/post-img/default2.jpg" alt="{{page.title}}"></div>
+            {% endif %}
+            
+            <div class="level">
+                <div class="level-left">
+                    <div class="subtitle is-6">{{page.date | date: "%Y %b %d"}} - {{page.author}}</div>
+                </div>
+                <div class="level-right">{% include tags.html tags=page.tags %}</div>
             </div>
-            <div class="level-right">{% include tags.html tags=page.tags %}</div>
+
+            <div>{{page.excerpt}}</div>
         </div>
 
-        <div>{{page.excerpt}}</div>
-    </div>
+        <hr class="container is-max-tablet">
 
-    <hr class="container is-max-tablet">
-
-    <div class="columns">
-        <div class="column">
-        </div>
-        <!-- 内容列 -->
-        <div class="column is-narrow">
-            <div class="container is-max-tablet my-6">
-                <div class="content">
-                    {{content}}
+        <div class="columns">
+            <div class="column">
+            </div>
+            <!-- 内容列 -->
+            <div class="column is-narrow">
+                <div class="container is-max-tablet my-6">
+                    <div class="content">
+                        {{content}}
+                    </div>
+                </div>
+                <div class="container is-max-tablet">
+                    {% include bib.html refs=page.refs %}
                 </div>
             </div>
-            <div class="container is-max-tablet">
-                {% include bib.html refs=page.refs %}
+            <!-- 目录列 -->
+            <div class="column" style="padding: 0;">
+                {% include side_toc.html %}
             </div>
         </div>
-        <!-- 目录列 -->
-        <div class="column" style="padding: 0;">
-            {% include side_toc.html %}
-        </div>
     </div>
+    
     
 
     {% include footer.html %}
