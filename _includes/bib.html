@@ -1,0 +1,16 @@
+{% if include.refs %}
+    <hr>
+    <div class="title is-4">参考文献</div>
+    {% assign end_index = include.refs.names.size | minus: 1 %}
+    <ol class="mx-6">
+        {% for i in (0..end_index) %}
+            <li>
+                <a href="{{include.refs.links[i]}}">{{include.refs.names[i]}}</a>
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<script>
+    console.log("{{include.refs.names.size}}");
+</script>
