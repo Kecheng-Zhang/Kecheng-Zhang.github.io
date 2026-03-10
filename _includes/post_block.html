@@ -12,11 +12,13 @@
 
     <div class="level">
         <div class="level-left">
-            <span class="icon-text mr-1">
-                <span class="icon has-text-grey"><i class="fas fa-calendar"></i></span>
-                <span class="has-text-grey">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+            <span class="mt-3">
+                <span class="icon-text mr-1">
+                    <span class="icon has-text-grey"><i class="fas fa-calendar"></i></span>
+                    <span class="has-text-grey">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+                </span>
+                {% include tags.html tags=include.post.tags %}
             </span>
-            {% include tags.html tags=include.post.tags %}
         </div>
         <div class="level-right">
             <span class="icon-text my-3">
