@@ -64,7 +64,7 @@
         var previousTocItem = null;
         headers.forEach((header, index) => {
             const tocItem = document.getElementById('side-toc-item-' + index);
-            if (scrollTop >= header.offsetTop + 700) {
+            if (scrollTop >= header.offsetTop + 640) {
                 if (previousTocItem) {
                     previousTocItem.classList.remove('toc-active');
                 }
