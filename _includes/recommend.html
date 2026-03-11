@@ -3,7 +3,7 @@
 <div class="title is-4">其他推荐</div>
 
 <div class="recommend-content">
-    {% for post in site.posts limit: 6 %}
+    {% for post in site.posts limit: 4 %}
         {% include post_block_small.html post=post %}
     {% endfor %}
 </div>

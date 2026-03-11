@@ -4,7 +4,7 @@ title: 《贪婪的多巴胺》读书笔记
 author: Kecheng Zhang
 img: /assets/img/post-img/molecule-of-more.jpg
 lang: zh
-featured: false
+featured: true
 tags:
     - 读书笔记
     - 学习
