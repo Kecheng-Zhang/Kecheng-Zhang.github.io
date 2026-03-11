@@ -110,6 +110,27 @@ p:has(+ div.caption) {
     font-weight: bold;
 }
 
+/* 文章卡片-小 */
+.post-block-small {
+    border-radius: 0.75rem;
+    transition: all 0.1s ease-in-out;
+    transition-property: transform shadow;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.post-block-small:hover {
+    background-color: hsl(221, 14%, 98%);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0 10px rgba(33, 33, 33, 0.07);
+}
+
+/* 推荐内容 */
+.recommend-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* 404 页面 */
 .not-found{
     font-size: 10rem;

@@ -1,0 +1,13 @@
+<div class="my-4" style="width: 50%;">
+    <a href="{{ include.post.url }}" class="has-text-text">
+        <div class="post-block-small p-4 mx-4">
+            <div>{{ include.post.title }}</div>
+            <span class="has-text-grey">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+            <span class="has-text-grey">{{ include.post.tags | join: ' ' }}</span>
+        </div>
+    </a>
+</div>
+
+<style>
+
+</style>
