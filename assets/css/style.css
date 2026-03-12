@@ -91,7 +91,7 @@ p:has(+ div.caption) {
 
 .toc {
     position: sticky;
-    top: 4rem;
+    top: 5rem;
 }
 
 .toc-title {
