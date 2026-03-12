@@ -2,8 +2,17 @@
 
 <div class="title is-4">其他推荐</div>
 
-<div class="recommend-content">
-    {% for post in site.posts limit: 4 %}
-        {% include post_block_small.html post=post %}
+{% assign my_counter = 0 %}
+
+<div class="grid is-col-min-12">
+    {% for post in site.posts %}
+        {% if page.url != post.url %}
+            {% if my_counter <= 4 %}
+                <div class="cell">
+                    {% include post_block_small.html post=post %}
+                </div>
+                {% assign my_counter = my_counter | plus: 1 %}
+            {% endif %}
+        {% endif %}
     {% endfor %}
 </div>
