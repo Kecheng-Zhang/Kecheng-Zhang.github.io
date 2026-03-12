@@ -7609,9 +7609,9 @@ a.navbar-item.is-active, a.navbar-item.is-selected,
   flex-shrink: 1;
 }
 .navbar-item.is-tab {
-  border-bottom: 1px solid transparent;
+  border-bottom: 3px solid transparent;
   min-height: var(--bulma-navbar-height);
-  padding-bottom: calc(0.5rem - 1px);
+  padding-bottom: calc(0.5rem - 3px);
 }
 .navbar-item.is-tab:focus, .navbar-item.is-tab:hover {
   background-color: var(--bulma-navbar-tab-hover-background-color);
