@@ -1,4 +1,4 @@
-<aside class="toc px-3">
+<aside class="toc px-3" id="toc">
     <div class="block my-0">
         <div class="toc-title icon" id="toc-title-icon">
             <span class="hover-blue" style="transform: translateY(-50%);">
@@ -60,20 +60,24 @@
         sideToc.appendChild(tocItem);
     });
 
-    // 窗口滑动到对应标题时，添加 active 类名，并在滑过其他标题时移除其他项的 active 类名
+    // 加粗对应的目录项
     window.addEventListener('scroll', function() {
-        const scrollTop = window.scrollY;
-        var previousTocItem = null;
+        // 窗口滑动到对应标题时，计算每个标题到顶部的距离
+        var distances = [];
         headers.forEach((header, index) => {
             const tocItem = document.getElementById('side-toc-item-' + index);
-            if (scrollTop >= header.offsetTop + 640) {
-                if (previousTocItem) {
-                    previousTocItem.classList.remove('toc-active');
-                }
-                tocItem.classList.add('toc-active');
-                previousTocItem = tocItem;
+            distances.push(Math.abs(header.getBoundingClientRect().top - 111));
+        });
+        console.log(distances);
+        // 找到最近的标题
+        var minDistance = Math.min(...distances);
+        var minDistanceIndex = distances.indexOf(minDistance);
+        // 加粗最近的标题对应的目录项并移除其他目录项的加粗样式
+        distances.forEach((distance, index) => {
+            if (distance === minDistance) {
+                document.getElementById('side-toc-item-' + index).classList.add('toc-active');
             } else {
-                tocItem.classList.remove('toc-active');
+                document.getElementById('side-toc-item-' + index).classList.remove('toc-active');
             }
         });
     });
