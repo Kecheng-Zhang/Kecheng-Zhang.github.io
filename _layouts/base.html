@@ -10,9 +10,16 @@
 
     <body class="has-navbar-fixed-top">
         {% include header.html %}
+
+        <div class="mx-5">
+            {% include title_section.html title=page.title subtitle=page.subtitle description=page.description %}
+            <hr class="container is-max-tablet">
+        </div>
+
         <main>
             <div class="mx-5">{{ content }}</div>
         </main>
+        
         {% include footer.html %}
     </body>
 
