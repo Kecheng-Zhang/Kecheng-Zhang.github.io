@@ -3,6 +3,7 @@ layout: post
 title: 建立个人博客
 author: Kecheng Zhang
 img:
+caption: （图片来自网络）
 lang: zh
 featured: false
 tags:

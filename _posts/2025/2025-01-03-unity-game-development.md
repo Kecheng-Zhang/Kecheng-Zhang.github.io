@@ -3,6 +3,7 @@ layout: post
 title: 游戏制作全流程：团队Unity开发实录
 author: Kecheng Zhang
 img: /assets/img/post-img/unity.jpg
+caption: （图片来自网络）
 lang: zh
 featured: true
 tags:

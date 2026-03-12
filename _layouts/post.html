@@ -7,21 +7,27 @@ layout: plain
     
     <div class="mx-5">
         <div class="container is-max-tablet my-6">
+
             <div class="title is-1">{{page.title}}</div>
-            {% if page.img %}
-                <div class="post-img"><img src="{{page.img}}" alt="{{page.title}}"></div>
-            {% else %}
-                <div class="post-img"><img src="/assets/img/post-img/default2.jpg" alt="{{page.title}}"></div>
-            {% endif %}
-            
-            <div class="level">
+
+            <div class="level mb-4">
                 <div class="level-left">
                     <div class="subtitle is-6">{{page.date | date: "%Y %b %d"}} - {{page.author}}</div>
                 </div>
                 <div class="level-right">{% include tags.html tags=page.tags %}</div>
             </div>
 
-            <div>{{page.excerpt}}</div>
+            {% if page.img %}
+                <div class="post-img"><img src="{{page.img}}" alt="{{page.title}}"></div>
+            {% else %}
+                <div class="post-img"><img src="/assets/img/post-img/default2.jpg" alt="{{page.title}}"></div>
+            {% endif %}
+
+            {% if page.caption %}
+                <div class="caption">{{page.caption}}</div>
+            {% endif %}
+
+            <div class="mt-4">{{page.excerpt}}</div>
         </div>
 
         <hr class="container is-max-tablet">
