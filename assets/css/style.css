@@ -42,6 +42,12 @@
     font-style: normal;
 }
 
+@media screen and (max-width: 768px) {
+    .hide-on-phone {
+        display: none !important;
+    }
+}
+
 .is-font-kai {
     font-family: 'LXGWWenKai', sans-serif;
 }
@@ -82,6 +88,7 @@ p:has(+ div.caption) {
 }
 
 /* 目录 */
+
 .toc {
     position: sticky;
     top: 4rem;

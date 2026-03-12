@@ -27,22 +27,22 @@ layout: plain
         <hr class="container is-max-tablet">
 
         <div class="columns">
-            <div class="column px-0">
+            <div class="column px-0 hide-on-phone">
             </div>
             <!-- 内容列 -->
-            <div class="column is-narrow px-0">
+            <div class="column is-narrow px-0 pt-0">
                 <div class="container is-max-tablet my-6">
                     <div class="content">
                         {{content}}
                     </div>
                 </div>
-                <div class="container is-max-tablet my-6">
+                <div class="container is-max-tablet my-6 ">
                     {% include bib.html refs=page.refs %}
                     {% include recommend.html%}
                 </div>
             </div>
             <!-- 目录列 -->
-            <div class="column px-0 pt-0">
+            <div class="column px-0 pt-0 hide-on-phone">
                 {% include side_toc.html %}
             </div>
         </div>
