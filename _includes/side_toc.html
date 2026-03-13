@@ -68,7 +68,7 @@
             const tocItem = document.getElementById('side-toc-item-' + index);
             distances.push(Math.abs(header.getBoundingClientRect().top - 111));
         });
-        console.log(distances);
+
         // 找到最近的标题
         var minDistance = Math.min(...distances);
         var minDistanceIndex = distances.indexOf(minDistance);
